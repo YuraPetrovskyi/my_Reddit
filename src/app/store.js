@@ -4,7 +4,7 @@ import allPostsReducer from "../features/posts/postsSlice";
 // import postReducer from "./myRedditSlice";
 import modeReducer from "../features/header/modeSlice";
 import searchReducer from "../features/header/searchSlice";
-import subredditReducer, {subredditSlice} from "../features/Subreddits/subredditSlice";
+import subredditReducer from "../features/Subreddits/subredditSlice";
 
 const store =  configureStore({
     reducer: {
