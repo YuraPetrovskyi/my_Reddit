@@ -1,9 +1,8 @@
 import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {loadPosts, selectAllPosts, selectFilteredAllPost} from "./postsSlice";
+import {loadPosts} from "./postsSlice";
 import '../../App.css'
 import { useParams } from 'react-router-dom';
-import {setSubreddit} from "../Subreddits/subredditSlice";
 
 export default function Posts() {
 

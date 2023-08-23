@@ -1,18 +1,14 @@
-import React, {useEffect} from "react";
+import React from "react";
 
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-// import { useParams } from 'react-router-dom';
-// import { setSubredit } from "./subredditSlice";
-import { useSelector, useDispatch} from "react-redux";
-import {loadPosts} from "../posts/postsSlice";
-import {useParams} from "react-router-dom";
+// import {useDispatch} from "react-redux";
+// import {useParams} from "react-router-dom";
 import SubreditLinks from "./SubreditLinks";
-import {setSubreddit} from "./subredditSlice";
 
 export default function Subreddits() {
-    const dispatch = useDispatch();
-    const { name, subredit } = useParams();
+    // const dispatch = useDispatch();
+    // const { name, subredit } = useParams();
 
     // useEffect(() => {
     //     // console.log(name, subredit);

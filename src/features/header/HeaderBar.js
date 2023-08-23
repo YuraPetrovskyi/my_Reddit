@@ -38,12 +38,12 @@ export default function HeaderBar() {
             <Search />
 
             <div className="mode-container">
-                <img id="change-mode-icon" className="sun-mode" src={icon} alt="image of type mode"/>
+                <img id="change-mode-icon" className="sun-mode" src={icon} alt=" type mode"/>
                 <button
                     onClick={changeMode}
                     type="button"
                 >
-                    <img id="change-mode-button" className="sun-mode-button" src={button} alt="image of button change type mode"/>
+                    <img id="change-mode-button" className="sun-mode-button" src={button} alt=" button change type mode"/>
                 </button>
             </div>
         </div>

@@ -1,7 +1,5 @@
 import React from "react";
-import {Link, NavLink} from "react-router-dom";
-import { useEffect} from "react";
-import { useParams} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 export default function SubreditLinks() {
 
