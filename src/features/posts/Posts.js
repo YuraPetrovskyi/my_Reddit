@@ -2,14 +2,14 @@ import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {loadPosts} from "./postsSlice";
 import '../../App.css'
-import { useParams } from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 
 export default function Posts() {
 
     const dispatch = useDispatch();
 
-    const {name, subredit  } = useParams();
-    console.log(name, subredit);
+    const {name, subredit , permalink  } = useParams();
+    console.log(name, subredit, permalink);
 
     // useEffect(() => {
     //     !name ? dispatch(loadPosts(`/r/${subredit}`)) : dispatch(loadPosts(`/${name}`));
@@ -72,21 +72,21 @@ export default function Posts() {
             ) : (
                 <div>
                     {allPosts.map((post) => (
-                        <div className={"post"} key={post.id}>
+                        <div className="post" key={post.id}>
 
-                            <div className={"post-score-container"}>
+                            <div className="post-score-container">
                                 <button>
                                     <img className="post-score-icon-plus" src="/voute-black.svg" alt="icon button voute minus"/>
                                 </button>
 
-                                <p className={"post-score"}> {formatNumber(post.score)} </p>
+                                <p className="post-score"> {formatNumber(post.score)} </p>
 
                                 <button>
                                     <img className="post-score-icon" src="/voute-black.svg" alt="icon button voute minus"/>
                                 </button>
                             </div>
 
-                            <div className={"post-img-container"}>
+                            <div className="post-img-container">
                                 { post.is_video  ? (
                                     <video width="200" height="180" controls>
                                     <source src={post.url + "/DASH_360.mp4"} type="video/mp4"/>
@@ -109,13 +109,15 @@ export default function Posts() {
                                 )}
                             </div>
 
-                            <div className={"post-information-container"}>
+                            <div className="post-information-container">
                                 <p>{post.subreddit_name_prefixed}   posted be <span>{post.author}</span> {newDate(post.created)} </p>
                                 <h2>{post.title}</h2>
-                                <p className={"post-information-self"}>{post.selftext}</p>
-                                <p className={"post-information-comments"}>
-                                    <img className="post-information-comments-icon" src="/comments.png" alt="icon button voute minus"/>
-                                    {formatNumber(post.num_comments)}    Comments
+                                <p className="post-information-self">{post.selftext}</p>
+                                <p className="post-information-comments">
+                                    <NavLink to={post.permalink}>
+                                        <img className="post-information-comments-icon" src="/comments.png" alt="icon button voute minus"/>
+                                        {formatNumber(post.num_comments)}    Comments
+                                    </NavLink>
                                 </p>
                             </div>
 

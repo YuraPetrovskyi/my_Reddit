@@ -5,8 +5,6 @@ export default function SubreditLinks() {
 
     // const { subcraib } = useParams();
     // console.log(subcraib)
-
-
     return (
         <div   className="subredit-list">
             <NavLink to="r/GreatBritishMemes" className="subredit-list-element">
@@ -15,13 +13,13 @@ export default function SubreditLinks() {
                 </div>
                 r/GreatBritishMemes
             </NavLink>
-            <NavLink to="r/learnprogramming" className="subredit-list-element">
+            <NavLink to="r/javascript" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/JS.png" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
                 r/javascript
             </NavLink>
-            <NavLink to="r/learnpython" className="subredit-list-element">
+            <NavLink to="r/Python" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/Python.png" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
@@ -33,31 +31,31 @@ export default function SubreditLinks() {
                 </div>
                 r/unitedkingdom
             </NavLink>
-            <NavLink to="r/unitedkingdom" className="subredit-list-element">
+            <NavLink to="r/Scotland" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/Scotland.png" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
                 r/Scotland
             </NavLink>
-            <NavLink to="r/unitedkingdom" className="subredit-list-element">
+            <NavLink to="r/webdev" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/webdevelop.jpg" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
                 r/webdev
             </NavLink>
-            <NavLink to="r/unitedkingdom" className="subredit-list-element">
+            <NavLink to="r/UkrainianConflict" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/UkraineWor.gif" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
                 r/UkrainianConflict
             </NavLink>
-            <NavLink to="r/unitedkingdom" className="subredit-list-element">
+            <NavLink to="r/AskReddit" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/AskReddit.png" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>
                 r/AskReddit
             </NavLink>
-            <NavLink to="r/unitedkingdom" className="subredit-list-element">
+            <NavLink to="r/ukraine" className="subredit-list-element">
                 <div className="subredit-list-conteiner">
                     <img src="/Ukraine.png" alt="logo of subreddit" className="subredit-list-logo"/>
                 </div>

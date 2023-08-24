@@ -23,8 +23,7 @@ export default function Subreddits() {
     //
     // function sendHadlerTwo() {
     //     dispatch(setSubredit(`/announcements`))
-    //     dispatch(loadPosts(`/r/unitedkingdom`))
-    // }
+    //     dispatch(loadPosts(`/r/unitedkingdom`))    // }
 
 
     return (
@@ -52,7 +51,6 @@ export default function Subreddits() {
             <div className="subreddits_topics">
                 <h2>Subcredit</h2>
             </div>
-
             <SubreditLinks/>
         </div>
     )
