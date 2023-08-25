@@ -26,8 +26,8 @@ export default function Search() {
                 value={searchTerm}
                 onChange={onSearchChangeHandler}
             />
-            <button>
-                <img className="search-icon" src="search-black.svg" alt="logo myReddit"/>
+            <button className="search-button">
+                <img className="search-icon" src="/search.svg" alt="search"/>
             </button>
         </form>
     )

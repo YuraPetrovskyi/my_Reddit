@@ -28,6 +28,9 @@ export default function Posts() {
 
     const { hasError } = useSelector((state) => state.allPosts);
     // console.log(hasError)
+    const allPosts = useSelector(state => state.allPosts.posts)
+    console.log(allPosts)
+
 
 
     const onTryAgainHandler = () => {
@@ -44,8 +47,6 @@ export default function Posts() {
         return number.toString();
     }
 
-    const allPosts = useSelector(state => state.allPosts.posts)
-    console.log(allPosts)
 
     function newDate(time) {
         const unixTimestamp = time;
@@ -61,6 +62,31 @@ export default function Posts() {
         // Create a formatted string
         return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     }
+
+    function formatTimeAgo(timestamp) {
+        const currentTime = Math.floor(Date.now() / 1000); // поточний час в секундах
+        const timeDifference = currentTime - timestamp; // різниця у секундах
+
+        if (timeDifference < 60) {
+            return `${timeDifference} seconds ago`;
+        } else if (timeDifference < 3600) {
+            const minutes = Math.floor(timeDifference / 60);
+            return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+        } else if (timeDifference < 86400) {
+            const hours = Math.floor(timeDifference / 3600);
+            return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+        } else if (timeDifference < 2592000) {
+            const days = Math.floor(timeDifference / 86400);
+            return `${days} ${days === 1 ? 'day' : 'days'} ago`;
+        } else if (timeDifference < 31536000) {
+            const months = Math.floor(timeDifference / 2592000);
+            return `${months} ${months === 1 ? 'month' : 'months'} ago`;
+        } else {
+            const years = Math.floor(timeDifference / 31536000);
+            return `${years} ${years === 1 ? 'year' : 'years'} ago`;
+        }
+    }
+
 
     return (
         <section className="post-container" >
@@ -110,15 +136,14 @@ export default function Posts() {
                             </div>
 
                             <div className="post-information-container">
-                                <p>{post.subreddit_name_prefixed}   posted be <span>{post.author}</span> {newDate(post.created)} </p>
+                                <p>{post.subreddit_name_prefixed}   posted be <span>{post.author}</span> {formatTimeAgo(post.created)} </p>
                                 <h2>{post.title}</h2>
-                                <p className="post-information-self">{post.selftext}</p>
-                                <p className="post-information-comments">
-                                    <NavLink to={post.permalink}>
-                                        <img className="post-information-comments-icon" src="/comments.png" alt="icon button voute minus"/>
-                                        {formatNumber(post.num_comments)}    Comments
-                                    </NavLink>
-                                </p>
+                                <p className="post-information-self">{post.selftext} </p>
+                                <NavLink to={post.permalink} className="post-information-comments">
+                                    <img className="post-information-comments-icon" src="/comments.png" alt="icon button voute minus"/>
+                                    {formatNumber(post.num_comments)}    Comments
+                                </NavLink>
+
                             </div>
 
                         </div>

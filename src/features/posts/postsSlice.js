@@ -7,14 +7,12 @@ const urlSearch = "https://www.reddit.com/search/?q=";
 const limit = ".json?limit=60";
 const search = "/search.json?q=";
 
-// const urlSubred = 'https://www.reddit.com/r/announcements';
-
 export  const loadPosts = createAsyncThunk(
     "allPosts/loadPosts",
     async (path = "/best", thunkAPI) => {
 
         const currentState = thunkAPI.getState();
-        console.log('Current state:', currentState);
+        console.log('Current state loadPosts:', currentState);
 
 
         console.log(path);
@@ -28,9 +26,6 @@ export  const loadPosts = createAsyncThunk(
         } else {
             console.log(`${urlAPI}${path}${limit}`)
             data = await fetch(`${urlAPI}${path}${limit}`);
-            // data = await fetch(`https://www.reddit.com/subreddits${limit}`);
-            //                     https://www.reddit.com/hot.json?limit=60
-            //                     https://www.reddit.com/r/announcements';
 
         }
 

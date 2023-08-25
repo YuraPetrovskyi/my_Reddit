@@ -12,7 +12,7 @@ const router = createBrowserRouter( createRoutesFromElements(
         <Route path="" element={<Posts/>}/>
         <Route path=":name" element={<Posts/>}/>
         <Route path=":name/:subredit" element={<Posts/>}/>
-        <Route path=":name/:subredit/comments/id/:permalink/" element={<Comments/>}/>
+        <Route path=":name/:subredit/comments/:id/:permalink/" element={<Comments/>}/>
 
     </Route>
 ))

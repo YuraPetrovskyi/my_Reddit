@@ -5,6 +5,7 @@ import allPostsReducer from "../features/posts/postsSlice";
 import modeReducer from "../features/header/modeSlice";
 import searchReducer from "../features/header/searchSlice";
 import subredditReducer from "../features/Subreddits/subredditSlice";
+import commentRecucer from "../features/comments/commentSlice";
 
 const store =  configureStore({
     reducer: {
@@ -12,7 +13,8 @@ const store =  configureStore({
         // posts: postReducer,
         mode: modeReducer,
         search: searchReducer,
-        subreddits: subredditReducer
+        subreddits: subredditReducer,
+        allComments: commentRecucer
     }
 });
 
