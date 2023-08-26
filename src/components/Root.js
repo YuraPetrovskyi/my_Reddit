@@ -13,8 +13,11 @@ export default function Root() {
     return (
         <>
           <HeaderBar />
-          <Subreddits/>
-          <Outlet/>
+          <main className="main-container">
+              <Subreddits/>
+              <Outlet/>
+          </main>
+
 
         </>
 

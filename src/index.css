@@ -39,7 +39,7 @@ a:hover {
   text-decoration: none;
 }
 a:hover {
-  background-color: yellow;
+  background-color: #11bd11;
   text-decoration: none;
 }
 
@@ -61,9 +61,7 @@ body {
 }
 
 #root {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
+
 }
 
 /*====================================================================*/
@@ -131,11 +129,21 @@ body {
   height: 35px;
 }
 /*==========================================================================*/
+.main-container {
+  display: flex;
+  justify-content: center;
+  /*background-color: #11bd11;*/
+  position: relative;
 
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 68px;
+}
+
+/*=======================================================================*/
 .subreddits_bar {
-  position: absolute;
   flex-direction: column;
-  min-width: 200px;
+  max-width: 170px;
   display: flex;
   color: #807b5b;
   background-color: #e3eae5;
@@ -168,7 +176,7 @@ body {
 .subredit-list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start  ;
+  align-items: center  ;
   /*тут я зроби змыни!!!!!!!!!!!!!!!!!!!!!!!!!*/
   border-top: 20px #444444;
   margin: 0 5px;
@@ -176,8 +184,8 @@ body {
 .subredit-list-element {
   margin-top: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: center ;
 }
 
 
@@ -197,24 +205,25 @@ body {
 /*===========================================================*/
 
 .post-container {
-  margin-left: 210px;
-  margin-top: 80px;
+
 
 }
 .post {
   border: 1px solid #979797;
-  border-radius: 5px;
   display: grid;
   grid-template-columns: 50px 200px auto;
-  margin: 10px 10px;
+  /*display: flex;*/
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
+
+/*-------------------------------------------*/
 .post-score-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #e3eae5;
   margin: 5px;
-  padding-top: 10px;
   font-size: 12px;
 }
 .post-score {
@@ -233,14 +242,29 @@ body {
 
 }
 /*---------------------------------------------------*/
+.media {
+  display: flex;
+  justify-content: center;
+}
+
 .post-img-container{
+  /*flex-basis: 30%;*/
   margin-top: 5px;
   margin-right: 5px;
   display: flex;
   align-items: center;
+
+}
+.post-img-container a{
+  display: flex;
+  justify-content: center;
 }
 .post-img {
   width: 100%;
+}
+.post-no-img{
+  width: 50%;
+
 }
 .post-img-title {
   width: 100%;
