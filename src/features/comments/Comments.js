@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {loadComments} from "./commentSlice";
-import {loadPosts} from "../posts/postsSlice";
 // import {NavLink} from "react-router-dom";
 
 

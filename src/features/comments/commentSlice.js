@@ -1,5 +1,4 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {loadPosts} from "../posts/postsSlice";
 // import * as path from "path";
 
 const urlAPI = 'https://www.reddit.com';
