@@ -28,6 +28,7 @@ ul li {
 }
 a, a:visited {
   text-decoration: none;
+  color: #807b5b;
 }
 a:link {
   /*background-color: greenyellow;*/
@@ -52,11 +53,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 body {
   width: 100%;
   font-family: 'Kalam', cursive;
   background-color: #d0d3d8;
-
 }
 
 #root {
@@ -65,9 +66,6 @@ body {
   margin: 0 auto;
 }
 
-main {
-
-}
 /*====================================================================*/
 .search-bar {
   position: fixed;
@@ -80,6 +78,7 @@ main {
   background-color: #1f1f1f;
   width: 100%;
   border-bottom: 2px solid white;
+  color: #807e78;
 }
 .logo-container {
   display: flex;
@@ -97,6 +96,7 @@ main {
   background-color: white;
 
 }
+/*------------------------------------------------*/
 .search-box{
   min-width: 33%;
   display: flex;
@@ -107,10 +107,10 @@ main {
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #a8abbb;
+  background-color: #ced1d6;
 }
 .search-button{
-  background-color: #a8abbb;
+  background-color: #ced1d6;
 }
 .search-icon{
   width: 30px;
@@ -118,6 +118,7 @@ main {
   cursor: pointer;
 
 }
+/*-----------------------------------*/
 .mode-container {
 
 }
@@ -136,7 +137,6 @@ main {
   flex-direction: column;
   min-width: 200px;
   display: flex;
-  margin-left: 10px;
   color: #807b5b;
   background-color: #e3eae5;
   border: 1px solid #979797;
@@ -144,9 +144,9 @@ main {
 }
 
 .icon-subreddits {
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.7rem;
 }
 .button-subreddit {
   background-color: rgba(168, 171, 187, 0.65);
@@ -194,18 +194,7 @@ main {
   width: 30px;
 }
 
-
-
-
-
-
-
-span {
-  font-weight: 700;
-}
-
 /*===========================================================*/
-
 
 .post-container {
   margin-left: 210px;
@@ -243,7 +232,7 @@ span {
   height: 25px;
 
 }
-
+/*---------------------------------------------------*/
 .post-img-container{
   margin-top: 5px;
   margin-right: 5px;
@@ -258,13 +247,16 @@ span {
   opacity: 0.1;
 
 }
-
+/*-------------------------------------------------*/
 .post-information-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #e3eae5;
   padding: 5px;
+}
+.posted-by {
+  color: #807b5b;
 }
 .post-information-self {
   max-height: 150px;
@@ -273,14 +265,23 @@ span {
 .post-information-self{
   font-family: 'Kalam', cursive;
 }
-.post-information-comments {
-  margin-top: 5px;
-  text-align: start;
-  font-size: 18px;
+.post-comments {
+  display: flex;
+  padding-top: 10px;
+  font-size: 1rem;
   border-top: 1px solid #807e78;
+  color: #d37a06;
+
+}
+.post-comments a{
+  color: #d37a06;
+}
+.post-comments a{
+  color: #d37a06;
 }
 
-.post-information-comments-icon {
+
+.post-comments-icon {
   width: 20px;
   height: 20px;
   margin-right: 5px;

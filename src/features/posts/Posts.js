@@ -129,19 +129,27 @@ export default function Posts() {
 
                                         ) : (
                                             <img src={post.url} alt="" className="post-img" />
-                                        )
-                                        }
+                                        )}
                                     </a>
                                 )}
                             </div>
 
                             <div className="post-information-container">
-                                <p>{post.subreddit_name_prefixed}   posted be <span>{post.author}</span> {formatTimeAgo(post.created)} </p>
+                                <p className="posted-by">
+                                    {post.subreddit_name_prefixed}
+                                    posted be
+                                    {post.author}
+                                    {formatTimeAgo(post.created)}
+                                </p>
                                 <h2>{post.title}</h2>
                                 <p className="post-information-self">{post.selftext} </p>
-                                <NavLink to={post.permalink} className="post-information-comments">
-                                    <img className="post-information-comments-icon" src="/comments.png" alt="icon button voute minus"/>
-                                    {formatNumber(post.num_comments)}    Comments
+                                <NavLink to={post.permalink} className="post-comments">
+                                    <img className="post-comments-icon" src="/comments.png" alt="icon button voute minus"/>
+                                    {formatNumber(post.num_comments) ? (
+                                        <p>0 Coment</p>
+                                    ) : (
+                                        <p>{formatNumber(post.num_comments)} Comments </p>
+                                    )}
                                 </NavLink>
 
                             </div>
