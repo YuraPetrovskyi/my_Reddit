@@ -41,12 +41,18 @@ const Title = ({ post }) => {
 
     return (
         <div className="post-information-container">
-            <p className="posted-by">
-                {post.subreddit_name_prefixed}
-                posted be
-                {post.author}
-                {formatTimeAgo(post.created)}
-            </p>
+            <div className="posted-by">
+                <a href={`https://www.reddit.com/${post.subreddit_name_prefixed}`}>{post.subreddit_name_prefixed}</a>
+                <p>-posted by-</p>
+                <a href={`https://www.reddit.com/user/${post.author}`}>{post.author}</a>
+                <p>-{formatTimeAgo(post.created)}-</p>
+            </div>
+            {/*<p className="posted-by">*/}
+            {/*    {post.subreddit_name_prefixed}*/}
+            {/*    posted be*/}
+            {/*    {post.author}*/}
+            {/*    {formatTimeAgo(post.created)}*/}
+            {/*</p>*/}
             <h2>{post.title}</h2>
             <p className="post-information-self">{post.selftext} </p>
             <NavLink to={post.permalink} className="post-comments">

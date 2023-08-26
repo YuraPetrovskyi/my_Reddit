@@ -35,17 +35,16 @@ a:link {
   text-decoration: none;
 }
 a:hover {
-  background-color: white;
+  color: #08729d;
   text-decoration: none;
 }
 a:hover {
-  background-color: #11bd11;
+  /*background-color: #11bd11;*/
   text-decoration: none;
 }
 
 button {
-  /*background-color: #e3eae5;*/
-
+  background-color: rgba(253, 253, 253, 0);
 }
 
 
@@ -280,7 +279,12 @@ body {
   padding: 5px;
 }
 .posted-by {
-  color: #807b5b;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.posted-by a{
+  margin: 0 0.3rem;
 }
 .post-information-self {
   max-height: 150px;
@@ -294,16 +298,8 @@ body {
   padding-top: 10px;
   font-size: 1rem;
   border-top: 1px solid #807e78;
-  color: #d37a06;
 
 }
-.post-comments a{
-  color: #d37a06;
-}
-.post-comments a{
-  color: #d37a06;
-}
-
 
 .post-comments-icon {
   width: 20px;
@@ -312,10 +308,14 @@ body {
 }
 /*===========================================================*/
 .comments-container {
-  margin-top: 80px;
-  margin-left: 200px;
-  padding: 15px;
+  padding: 0 15px;
   max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+}
+.comments-container h2{
+  text-align: center;
 }
 
 
@@ -328,8 +328,19 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.comment-madia {
-  max-width: 600px;
+.comment-by a{
+  margin: 0 0.3rem;
+}
+.comment-video {
+  display: flex;
+  justify-content: center;
+  /*max-width: 500px;*/
+}
+.comment-img {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 .comment-img-thumbnail {
   max-width: 200px;
@@ -337,6 +348,10 @@ body {
 .comment-content{
   border-top: 1px solid black;
   padding: 10px;
+}
+.post-img-container {
+  display: flex;
+  justify-content: center;
 }
 .comment-icon-container{
   display: flex;

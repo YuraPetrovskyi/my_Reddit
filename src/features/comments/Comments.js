@@ -82,29 +82,35 @@ export  function Comments() {
 
                 <h2>{post[0].title}</h2>
 
-                <div className="comment-madia" >
+                <div >
                     { post[0].is_video  ? (
-                        <video width="200" height="180" controls>
-                            <source src={post[0].url + "/DASH_360.mp4"} type="video/mp4"/>
-                            Your browser does not support the video tag.
-                        </video>
+                        <div className="comment-video" >
+                            <video  controls>
+                                <source src={post[0].url + "/DASH_360.mp4"} type="video/mp4"/>
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
 
                     ) : (
-                        <a href={post[0].url}>
-                            {post[0].post_hint !== "image" ? (
-                                <div>
+                        <div className="comment-img">
+                            <a href={post[0].url}>
+                                {post[0].post_hint !== "image" ? (
+                                    <div>
+                                        <img src={post[0].url} alt="" className="post-img" />
+                                        <img src={post[0].thumbnail} alt="" className="comment-img-thumbnail" />
+                                    </div>
+                                ) : (
                                     <img src={post[0].url} alt="" className="post-img" />
-                                    <img src={post[0].thumbnail} alt="" className="comment-img-thumbnail" />
-                                </div>
-                            ) : (
-                                <img src={post[0].url} alt="" className="post-img" />
-                            )
-                            }
-                        </a>
+                                )
+                                }
+                            </a>
+                        </div>
+
                     )}
                 </div>
 
-                <p className="post-information-self">{post[0].selftext}</p>
+                <p >{post[0].selftext}</p>
 
                 <p className="comment-icon-container">
                     <img src="/comment.svg" alt="" className="comment-icon"/>
