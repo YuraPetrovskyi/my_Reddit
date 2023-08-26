@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {NavLink, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {loadComments} from "./commentSlice";
 import {loadPosts} from "../posts/postsSlice";
 // import {NavLink} from "react-router-dom";
@@ -14,12 +14,9 @@ export  function Comments() {
 
     useEffect(() => {
         dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
-    }, [dispatch]);
+    }, [name, subredit, id, permalink, dispatch]);
 
 
-
-    const { hasError } = useSelector((state) => state.allComments);
-    // console.log(hasError)
 
     const allPosts = useSelector(state => state.allPosts.posts)
     console.log(allPosts)
@@ -29,11 +26,6 @@ export  function Comments() {
 
     const allComments = useSelector((state) => state.allComments.comments)
     console.log("коментарі:", allComments)
-
-
-    const onTryAgainHandler = () => {
-        dispatch(loadPosts())
-    };
 
     function formatNumber(number) {
         if (number >= 100000) {
