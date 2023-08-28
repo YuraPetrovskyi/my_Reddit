@@ -65,9 +65,9 @@ export  function Comments() {
             <div className="comment-container">
 
                 <div className="comment-by">
-                    <a href={`https://www.reddit.com/${post[0].subreddit_name_prefixed}`}>{post[0].subreddit_name_prefixed}</a>
+                    <a href={`https://www.reddit.com/${post[0].subreddit_name_prefixed}`} target="_blank"  rel="noopener noreferrer">{post[0].subreddit_name_prefixed}</a>
                     <p>posted by</p>
-                    <a href={`https://www.reddit.com/user/${post[0].author}`}>{post[0].author}</a>
+                    <a href={`https://www.reddit.com/user/${post[0].author}`} target="_blank"  rel="noopener noreferrer">{post[0].author}</a>
                     <p>{formatTimeAgo(post[0].created)}</p>
                 </div>
 
@@ -85,7 +85,7 @@ export  function Comments() {
 
                     ) : (
                         <div className="comment-img">
-                            <a href={post[0].url}>
+                            <a href={post[0].url} target="_blank"  rel="noopener noreferrer">
                                 {post[0].post_hint !== "image" ? (
                                     <div>
                                         <img src={post[0].url} alt="" className="post-img" />

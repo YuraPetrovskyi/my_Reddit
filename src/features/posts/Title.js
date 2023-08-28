@@ -42,9 +42,9 @@ const Title = ({ post }) => {
     return (
         <div className="post-information-container">
             <div className="posted-by">
-                <a href={`https://www.reddit.com/${post.subreddit_name_prefixed}`}>{post.subreddit_name_prefixed}</a>
+                <a href={`https://www.reddit.com/${post.subreddit_name_prefixed}`} target="_blank"  rel="noopener noreferrer">{post.subreddit_name_prefixed}</a>
                 <p>-posted by-</p>
-                <a href={`https://www.reddit.com/user/${post.author}`}>{post.author}</a>
+                <a href={`https://www.reddit.com/user/${post.author}`} target="_blank"  rel="noopener noreferrer">{post.author}</a>
                 <p>-{formatTimeAgo(post.created)}-</p>
             </div>
             {/*<p className="posted-by">*/}
