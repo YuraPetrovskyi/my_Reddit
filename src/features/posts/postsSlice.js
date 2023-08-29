@@ -1,34 +1,15 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-
-import { selectSearchTerm } from "../header/searchSlice";
-
 const urlAPI = 'https://www.reddit.com';
-const urlSearch = "https://www.reddit.com/search/?q=";
-const limit = ".json?limit=60";
-const search = "/search.json?q=";
 
 export  const loadPosts = createAsyncThunk(
     "allPosts/loadPosts",
-    async (path = "/best", thunkAPI) => {
+    async (path, thunkAPI) => {
 
         const currentState = thunkAPI.getState();
-        console.log('Current state loadPosts:', currentState);
+        console.log('Current state with postSlice:', currentState);
+        console.log('адреса фiтчу',`${urlAPI}${path}`)
 
-
-        console.log(path);
-
-        let data;
-        if (currentState.search.length > 0){
-            console.log(currentState.search);
-            const searchTerms = currentState.search;
-            console.log((`${urlSearch}${searchTerms}`))
-            data = await fetch(`${urlAPI}${search}${searchTerms}`);
-        } else {
-            console.log(`${urlAPI}${path}${limit}`)
-            data = await fetch(`${urlAPI}${path}${limit}`);
-
-        }
-
+        const data = await fetch(`${urlAPI}${path}`);
         const json = await data.json();
         return json.data.children.map((post) => post.data);
     }
@@ -42,7 +23,7 @@ export const postsSlice = createSlice({
     },
     reducers: {},
     extraReducers: {
-        [loadPosts.pending]: (state, action) => {
+        [loadPosts.pending]: (state) => {
             state.isLoading = true;
             state.hasError = false;
         },
@@ -51,25 +32,41 @@ export const postsSlice = createSlice({
             state.isLoading = false;
             state.hasError = false;
         },
-        [loadPosts.rejected]: (state, action) => {
+        [loadPosts.rejected]: (state) => {
             state.isLoading = false;
             state.hasError = true;
         }
     }
 });
-
-
-export const selectAllPosts = (state) => state.allPosts.posts;
-export const selectFilteredAllPost = (state) => {
-    const searchTerm = selectSearchTerm(state)
-    const allPost = selectAllPosts(state);
-
-    return allPost.filter((post) =>
-        post.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-};
-
-
-
-
 export default postsSlice.reducer;
+
+
+// import { selectSearchTerm } from "../header/searchSlice";
+// import { useSearchParams } from 'react-router-dom';
+
+// const urlSearch = "https://www.reddit.com/search/?q=";
+// const limit = ".json?limit=60";
+// const search = "/search.json?q=";
+
+// export const selectFilteredAllPost = (state) => {
+//     const searchTerm = selectSearchTerm(state)
+//     const allPost = selectAllPosts(state);
+//
+//     return allPost.filter((post) =>
+//         post.title.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+// };
+
+// console.log(path);
+
+
+// if (currentState.search.searchterm.length > 0){
+//     console.log(currentState.search.searchterm);
+//     const searchTerms = currentState.search.searchterm;
+//     console.log((`${urlSearch}${searchTerms}`))
+//     data = await fetch(`${urlAPI}${search}${searchTerms}`);
+// } else {
+//     console.log(`${urlAPI}${path}${limit}`)
+//     data = await fetch(`${urlAPI}${path}${limit}`);
+//
+// }

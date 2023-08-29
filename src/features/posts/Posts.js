@@ -8,30 +8,40 @@ import Media from "./Media";
 import Title from "./Title";
 import Error from "./Error";
 
+
+import { useLocation } from "react-router-dom";
+
+import { useSearchParams } from 'react-router-dom';
+
+
 export default function Posts() {
-
+    const limit = ".json?limit=60";
     const dispatch = useDispatch();
+    const location = useLocation();
 
-    const {name, subredit , permalink  } = useParams();
-    console.log(name, subredit, permalink);
+    const [ searchParams ] = useSearchParams();
+    const searchTerm = searchParams.get('q');
+    console.log(searchTerm);
 
+    const {name, subredit ,   } = useParams();
     useEffect(() => {
-        if (name && subredit) {
-            dispatch(loadPosts(`/${name}/${subredit}`));
+        window.scrollTo(0, 0)
+        if (searchTerm) {
+            dispatch(loadPosts(`/search.json?q=${searchTerm}`));
+        } else if (name && subredit) {
+            dispatch(loadPosts(`/${name}/${subredit}${limit}`));
         } else if (name) {
-            dispatch(loadPosts(`/${name}`));
+            dispatch(loadPosts(`/${name}${limit}`));
         } else {
-            dispatch(loadPosts(`/top`));
+            dispatch(loadPosts(`/top${limit}`));
         }
-    }, [name, subredit, dispatch]);
+    }, [ dispatch, name, subredit, searchTerm, location]);
 
-    const { hasError } = useSelector((state) => state.allPosts);
-    // console.log(hasError)
 
+    const { hasError } = useSelector(state => state.allPosts);
+    console.log(hasError)
     const allPosts = useSelector(state => state.allPosts.posts)
     console.log(allPosts)
-
-
 
     return (
         <div className="post-container" >

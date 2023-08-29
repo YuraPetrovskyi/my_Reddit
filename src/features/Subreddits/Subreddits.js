@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 // import {useDispatch} from "react-redux";
 // import {useParams} from "react-router-dom";
 import SubreditLinks from "./SubreditLinks";
+import {TopButton} from "./TopButton";
 
 export default function Subreddits() {
     // const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export default function Subreddits() {
 
 
     return (
-        <div className={"subreddits_bar"}>
+        <div className="subreddits_bar">
             {/*<button onClick={sendHadler} className="button-subreddit">*/}
             {/*    <img className="icon-subreddits" src="/hot.png" alt=""/>*/}
             {/*    <p className="button-subreddit-text">Hot</p>*/}
@@ -36,22 +37,31 @@ export default function Subreddits() {
             {/*    <img className="icon-subreddits" src="/hot.png" alt=""/>*/}
             {/*    <p className="button-subreddit-text">New</p>*/}
             {/*</button>*/}
-            <NavLink to="/hot" className="button-subreddit">
-                <img className="icon-subreddits" src="/icon/subcred/hot.png" alt=""/>
-                <p className="button-subreddit-text">Hot</p>
-            </NavLink>
-            <NavLink to="/new" className="button-subreddit">
-                <img className="icon-subreddits" src="/icon/subcred/new.png" alt=""/>
-                <p className="button-subreddit-text">New</p>
-            </NavLink>
-            <NavLink to="/top" className="button-subreddit">
-                <img className="icon-subreddits" src="/icon/subcred/top.svg" alt=""/>
-                <p className="button-subreddit-text">Top</p>
-            </NavLink>
-            <div className="subreddits_topics">
-                <h2>Subcredit</h2>
+            <div className="subreddits_menu">
+                <NavLink to="/hot" className="button-subreddit">
+                    <img className="icon-subreddits" src="/icon/subcred/hot.png" alt=""/>
+                    <p className="button-subreddit-text">Hot</p>
+                </NavLink>
+                <NavLink to="/new" className="button-subreddit">
+                    <img className="icon-subreddits" src="/icon/subcred/new.png" alt=""/>
+                    <p className="button-subreddit-text">New</p>
+                </NavLink>
+                <NavLink to="/top" className="button-subreddit">
+                    <img className="icon-subreddits" src="/icon/subcred/top.svg" alt=""/>
+                    <p className="button-subreddit-text">Top</p>
+                </NavLink>
             </div>
-            <SubreditLinks/>
+
+            <div className="subreddits_topics">
+                <h2>Subcredits</h2>
+            </div>
+            <div >
+                <SubreditLinks/>
+            </div>
+            <div className="button-top-container">
+                <TopButton/>
+            </div>
+
         </div>
     )
 }

@@ -2,19 +2,22 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {loadComments} from "./commentSlice";
-// import {NavLink} from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+
 
 
 export  function Comments() {
     const dispatch = useDispatch();
+    const location = useLocation();
 
     const {name, subredit, id, permalink  } = useParams();
     console.log(name, subredit, id,  permalink);
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
-    }, [name, subredit, id, permalink, dispatch]);
-
+    },[name, subredit, id, permalink, location]);
 
 
     const allPosts = useSelector(state => state.allPosts.posts)

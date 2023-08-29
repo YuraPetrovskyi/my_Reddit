@@ -4,7 +4,7 @@ export const subredditSlice = createSlice({
     name: "subreddits",
     initialState: "/new",
     reducers: {
-        setSubredit: (state, action) => (
+        setSubreddit: (state, action) => (
             state = action.payload
         ),
     }

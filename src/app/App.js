@@ -10,10 +10,10 @@ import {Comments} from "../features/comments/Comments";
 const router = createBrowserRouter( createRoutesFromElements(
     <Route path="/" element={<Root />}>
         <Route path="" element={<Posts/>}/>
+        <Route path="/search" element={<Posts />} />
         <Route path=":name" element={<Posts/>}/>
         <Route path=":name/:subredit" element={<Posts/>}/>
         <Route path=":name/:subredit/comments/:id/:permalink/" element={<Comments/>}/>
-
     </Route>
 ))
 
