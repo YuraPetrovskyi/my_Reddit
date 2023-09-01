@@ -54,20 +54,20 @@
 
 
 
-@media (max-width: 1023px) {
-    body {
-        .post {
-            margin-left: 5px;
-            margin-bottom: 5px;
-        }
-        .post-score-container{
-            margin: 0;
-        }
-        .post-information-container{
-            margin: 0;
-        }
+/*@media (max-width: 1023px) {*/
+/*    body {*/
+/*        .post {*/
+/*            margin-left: 5px;*/
+/*            margin-bottom: 5px;*/
+/*        }*/
+/*        .post-score-container{*/
+/*            margin: 0;*/
+/*        }*/
+/*        .post-information-container{*/
+/*            margin: 0;*/
+/*        }*/
 
-    }
+/*    }*/
 
-}
+/*}*/
 

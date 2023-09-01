@@ -30,7 +30,7 @@ export default function HeaderBar() {
 
     return (
         <div className="search-bar">
-            <NavLink to="/best" className="logo-container ">
+            <NavLink to="/top" className="logo-container ">
                 <img className="icon-logo" src="/icon/navigator/logomyreddit.png" alt="icon logo myReddit"/>
                 <p>myReddit</p>
             </NavLink>

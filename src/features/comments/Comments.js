@@ -11,13 +11,14 @@ export  function Comments() {
     const dispatch = useDispatch();
     const location = useLocation();
 
+
     const {name, subredit, id, permalink  } = useParams();
     console.log(name, subredit, id,  permalink);
 
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
-    },[name, subredit, id, permalink, location]);
+    },[name, subredit, id, permalink, location, dispatch]);
 
 
     const allPosts = useSelector(state => state.allPosts.posts)
@@ -25,6 +26,7 @@ export  function Comments() {
 
     const post = allPosts.filter(topic => topic.id === id);
     console.log("пост з коментарем:", post)
+    const isComent = post[0].num_comments;
 
     const allComments = useSelector((state) => state.allComments.comments)
     console.log("коментарі:", allComments)
@@ -65,7 +67,7 @@ export  function Comments() {
 
     return (
         <section className="comments-container">
-            <div className="comment-container">
+            <div className="comment-post-information">
 
                 <div className="comment-by">
                     <a href={`https://www.reddit.com/${post[0].subreddit_name_prefixed}`} target="_blank"  rel="noopener noreferrer">{post[0].subreddit_name_prefixed}</a>
@@ -90,12 +92,14 @@ export  function Comments() {
                         <div className="comment-img">
                             <a href={post[0].url} target="_blank"  rel="noopener noreferrer">
                                 {post[0].post_hint !== "image" ? (
-                                    <div>
-                                        <img src={post[0].url} alt="" className="post-img" />
-                                        <img src={post[0].thumbnail} alt="" className="comment-img-thumbnail" />
+                                    <div className="comment-img-body">
+                                        <img src={post[0].url} alt="" />
+                                        <img src={post[0].thumbnail} alt=""/>
                                     </div>
                                 ) : (
-                                    <img src={post[0].url} alt="" className="post-img" />
+                                    <div className="comment-img-body">
+                                        <img src={post[0].url} alt=""  />
+                                    </div>
                                 )
                                 }
                             </a>
@@ -108,7 +112,11 @@ export  function Comments() {
 
                 <p className="comment-icon-container">
                     <img src="/comment.svg" alt="" className="comment-icon"/>
-                    {formatNumber(post[0].num_comments)}    Comments
+                    {isComent ? (
+                        <p>{formatNumber(post[0].num_comments)} Comments </p>
+                    ) : (
+                        <p>0 Comment</p>
+                    )}
                 </p>
 
             </div>
@@ -117,12 +125,12 @@ export  function Comments() {
                     <div className="comment-content">
                         <p>Comment by {coment.data.author} {formatTimeAgo(coment.data.created)}</p>
 
-                        <div className="coments-body">{coment.data.body}</div>
+                        <div className="comments-body">{coment.data.body}</div>
 
-                        <div className="coment-vote">
-                            <img src="/like.svg" alt="" className="coment-like"/>
+                        <div className="comment-vote">
+                            <img src="/like.svg" alt="" className="comment-like"/>
                             {coment.data.score ? formatNumber(coment.data.score) : "0" }
-                            <img src="/like.svg" alt="" className="coment-like-rotation"/>
+                            <img src="/like.svg" alt="" className="comment-like-rotation"/>
                         </div>
                     </div>
                 ))}

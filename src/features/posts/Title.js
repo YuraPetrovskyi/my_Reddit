@@ -47,23 +47,18 @@ const Title = ({ post }) => {
                 <a href={`https://www.reddit.com/user/${post.author}`} target="_blank"  rel="noopener noreferrer">{post.author}</a>
                 <p>-{formatTimeAgo(post.created)}-</p>
             </div>
-            {/*<p className="posted-by">*/}
-            {/*    {post.subreddit_name_prefixed}*/}
-            {/*    posted be*/}
-            {/*    {post.author}*/}
-            {/*    {formatTimeAgo(post.created)}*/}
-            {/*</p>*/}
             <h2>{post.title}</h2>
-            <p className="post-information-self">{post.selftext} </p>
+            <div className="post-information-self">
+                {post.selftext ? <p >{post.selftext}</p> : ""}
+            </div>
             <NavLink to={post.permalink} className="post-comments">
                 <img className="post-comments-icon" src="/comments.png" alt="icon button voute minus"/>
                 {isComent ? (
                     <p>{formatNumber(isComent)} Comments </p>
                 ) : (
-                    <p>0 Coment</p>
+                    <p>0 Comment</p>
                 )}
             </NavLink>
-
         </div>
     );
 };

@@ -1,8 +1,8 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {loadPosts} from "./postsSlice";
+import { loadPosts } from "./postsSlice";
 import '../../App.css'
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Score from "./Score";
 import Media from "./Media";
 import Title from "./Title";
@@ -12,7 +12,6 @@ import Error from "./Error";
 import { useLocation } from "react-router-dom";
 
 import { useSearchParams } from 'react-router-dom';
-
 
 export default function Posts() {
     const limit = ".json?limit=60";

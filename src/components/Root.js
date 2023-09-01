@@ -17,8 +17,6 @@ export default function Root() {
               <Subreddits/>
               <Outlet/>
           </main>
-
-
         </>
 
     )
