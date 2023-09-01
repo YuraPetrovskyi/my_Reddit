@@ -1,6 +1,6 @@
 import React from "react";
 
-import {useSelector, useDispatch} from "react-redux";
+// import {useSelector, useDispatch} from "react-redux";
 // import {changeIcon, changeButton} from "./modeSlice";
 import Search from "./Search";
 import {NavLink} from "react-router-dom";

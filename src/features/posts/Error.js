@@ -1,10 +1,10 @@
 import React from "react";
-import {loadPosts} from "./postsSlice";
-import {useDispatch} from "react-redux";
+// import {loadPosts} from "./postsSlice";
+// import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 const Error = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const navigate = useNavigate()
 
     const onTryAgainHandler = () => {
