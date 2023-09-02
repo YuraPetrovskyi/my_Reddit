@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function SubredditMenu() {
 
     return (
-        <div>
+        <div className="button-subreddit-container">
             <NavLink to="/hot" className="button-subreddit">
                 <img className="icon-subreddit" src="/icon/subcred/hot.png" alt=""/>
                 <p className="button-subreddit-text">Hot</p>

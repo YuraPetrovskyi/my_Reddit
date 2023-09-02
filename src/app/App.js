@@ -18,7 +18,7 @@ const router = createBrowserRouter( createRoutesFromElements(
 ))
 
 export default function App() {
-  return (
-      <RouterProvider router={router}/>
-  );
+    return (
+        <RouterProvider router={router}/>
+    );
 }

@@ -8,7 +8,7 @@ import SubredditMenu from "./SubredditMenu";
 export default function Subreddits() {
 
     return (
-        <div className="subreddits_container">
+        <div className="subreddits-container">
             <SubredditMenu/>
             <h2>Subcredits</h2>
             <SubredditLinks/>

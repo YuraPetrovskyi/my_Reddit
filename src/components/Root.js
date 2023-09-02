@@ -12,11 +12,11 @@ export default function Root() {
     // console.log(topic);
     return (
         <>
-          <HeaderBar />
-          <main className="main-container">
-              <Subreddits/>
-              <Outlet/>
-          </main>
+            <HeaderBar />
+            <main className="main-container">
+                <Subreddits/>
+                <Outlet/>
+            </main>
         </>
 
     )
