@@ -123,8 +123,11 @@ export  function Comments() {
             <div >
                 {allComments.map((coment) => (
                     <div className="comment-content">
-                        <p>Comment by {coment.data.author} {formatTimeAgo(coment.data.created)}</p>
-
+                        <div className="posted-by">
+                            <p>Comment by</p>
+                            <a href={`https://www.reddit.com/user/${coment.data.author}`} target="_blank"  rel="noopener noreferrer">{coment.data.author}</a>
+                            <p>-{formatTimeAgo(coment.data.created)}</p>
+                        </div>
                         <div className="comments-body">{coment.data.body}</div>
 
                         <div className="comment-vote">
@@ -135,8 +138,6 @@ export  function Comments() {
                     </div>
                 ))}
             </div>
-
-
 
         </section>
     )
