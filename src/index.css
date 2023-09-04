@@ -146,13 +146,13 @@ code {
   display: flex;
   justify-content: center;
   /*background-color: #11bd11;*/
-  /*position: relative;*/
+  position: relative;
 
   max-width: 1000px;
   margin: 68px auto 0;
   /*margin-top: 68px;*/
   /*background-color: red;*/
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /*=======================================================================*/
@@ -165,7 +165,7 @@ code {
   background-color: #e3eae5;
   border: 1px solid rgba(128, 123, 91, 0.39);
   font-family: 'Caveat', cursive;
-  /*position: relative;*/
+  /* position: relative; */
 }
 /*-----------------------------*/
 .button-subreddit {
@@ -227,15 +227,21 @@ code {
 /*  z-index: 5;*/
 /*  margin: 0 5px;*/
 /*  border-top: 1px solid rgba(128, 123, 91, 0.39);*/
-/*}*/
-/*.button-top {*/
-/*  cursor: pointer;*/
-/*  width: 60px;*/
-/*}*/
-/*.button-top img {*/
-/*  width: 100%;*/
-/*}*/
-/*========================Post===================================*/
+/* }*/
+.button-top-container {
+  position: sticky;
+  top: 70px;  
+}
+.button-top {
+  cursor: pointer;
+  width: 60px;
+}
+.button-top img {
+  width: 100%;
+  opacity: 0.3;
+}
+
+/*========================Post=================================== */
 
 .post-container {
   /*background-color: #5ac7f3;*/

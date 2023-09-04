@@ -2,7 +2,7 @@ import React from "react";
 
 
 import SubredditLinks from "./SubreditLinks";
-// import TopButton from "./TopButton";
+import { TopButton } from "./TopButton";
 import SubredditMenu from "./SubredditMenu";
 
 export default function Subreddits() {
@@ -12,9 +12,9 @@ export default function Subreddits() {
             <SubredditMenu/>
             <h2>Subcredits</h2>
             <SubredditLinks/>
-            {/*<div>*/}
-            {/*    <TopButton/>*/}
-            {/*</div>*/}
+            <div className="button-top-container">
+                <TopButton/>
+            </div>
         </div>
     )
 }

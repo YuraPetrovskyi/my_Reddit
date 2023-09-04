@@ -8,7 +8,7 @@ export function TopButton() {
     }
 
     return (
-        <div className="button-top-container">
+        <div >
             <button className="button-top" onClick={scrollTopHandler}>
                 <img src="/top_arrow.svg" alt=""/>
             </button>
