@@ -1,8 +1,8 @@
 import React from "react";
-import {useLocation} from "react-router-dom";
+// import {useLocation} from "react-router-dom";
 
 export function TopButton() {
-    const location = useLocation();
+    // const location = useLocation();
     const scrollTopHandler = () => {
         window.scrollTo(0, 0)
     }
