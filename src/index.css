@@ -186,10 +186,24 @@ code {
   margin-right: 0.7rem;
 }
 /*---------------------------------------*/
-.subreddits_container h2 {
+/* body .subreddits-container {
+  display: none;
+} */
+.subreddit-title {
   text-align: center;
-  border-top: #807b5b;
+  display: none;
+  /* border-bottom: #807b5b; */
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  color: #807b5b;
+
 }
+.subreddit-title:hover {
+  color: #08729d;
+}
+
+
+
 /*-----------------------------------------*/
 .subreddit-list {
   display: flex;
@@ -202,7 +216,8 @@ code {
   /*margin-bottom: 10px;*/
 }
 .subreddit-list-element {
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center ;
@@ -417,6 +432,7 @@ code {
 .comments-container {
   padding: 0 15px;
   max-width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   /*justify-content: center;*/
@@ -424,7 +440,9 @@ code {
 .comments-container h2{
   text-align: center;
 }
-
+.comment-post-media {
+  margin: 0 auto;
+}
 
 .comment-post-information {
   border-top: 1px solid black;
@@ -449,15 +467,24 @@ code {
   max-height: 500px;
 }
 /*-----------------------------------*/
-.comment-img {
+.comment-img-container{
   display: flex;
   justify-content: center;
-  max-width: 100%;
-  margin: 0 auto;
+  /* max-width: 100%; */
+  /* margin: 0 auto; */
+}
+.comment-img-body {
+  max-height: 350px;
+	overflow: hidden;
 }
 .comment-img-body img{
-  width: 100%;
-  max-height: 700px;
+  max-width: 100%;
+  max-height: 350px;
+	/* max-height: 300px; */
+	/* object-fit: cover; */
+
+  /* width: 100%;
+  max-height: 700px; */
 }
 /*.comment-img-thumbnail {*/
 /*  !*max-width: 200px;*!*/
@@ -472,6 +499,7 @@ code {
 .comment-content{
   border-top: 1px solid black;
   padding: 10px;
+  max-width: 100%;
 }
 .comment-icon-container{
   display: flex;
@@ -483,8 +511,10 @@ code {
 }
 .comments-body{
   padding-left: 2rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem auto;
   font-family: 'Courgette', cursive;
+  max-width: 90%;
+  
   /*font-family: Serif;*/
   /*max-width: 500px;*/
 

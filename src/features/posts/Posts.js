@@ -16,13 +16,13 @@ import { useSearchParams } from 'react-router-dom';
 export default function Posts() {
     const limit = ".json?limit=60";
     const dispatch = useDispatch();
-    const location = useLocation();
+    // const location = useLocation();
 
     const [ searchParams ] = useSearchParams();
     const searchTerm = searchParams.get('q');
     console.log(searchTerm);
 
-    const {name, subredit ,   } = useParams();
+    const {name, subredit} = useParams();
     useEffect(() => {
         window.scrollTo(0, 0)
         if (searchTerm) {
@@ -34,7 +34,12 @@ export default function Posts() {
         } else {
             dispatch(loadPosts(`/top${limit}`));
         }
-    }, [ dispatch, name, subredit, searchTerm, location]);
+        // const subredditElements = document.getElementsByClassName("subreddit-list");
+        // alert("render")
+        // subredditElements.forEach((element) => {
+        //     element.classList.remove("active");
+        // });
+    }, [ dispatch, name, subredit, searchTerm]);
 
 
     const { hasError } = useSelector(state => state.allPosts);

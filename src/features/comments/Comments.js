@@ -78,7 +78,7 @@ export  function Comments() {
 
                 <h2>{post[0].title}</h2>
 
-                <div >
+                <div className="comment-post-media" >
                     { post[0].is_video  ? (
                         <div className="comment-video" >
                             <video  controls>
@@ -89,18 +89,18 @@ export  function Comments() {
 
 
                     ) : (
-                        <div className="comment-img">
+                        <div className="comment-img-container">
                             <a href={post[0].url} target="_blank"  rel="noopener noreferrer">
                                 {post[0].post_hint !== "image" ? (
-                                    <div className="comment-img-body">
-                                        <img src={post[0].url} alt="" />
-                                        <img src={post[0].thumbnail} alt=""/>
-                                    </div>
-                                ) : (
-                                    <div className="comment-img-body">
-                                        <img src={post[0].url} alt=""  />
-                                    </div>
-                                )
+                                        <div className="comment-img-body">
+                                            {/* <img src={post[0].url} alt="" /> */}
+                                            <img src={post[0].thumbnail} alt=""/>
+                                        </div>
+                                    ) : (
+                                        <div className="comment-img-body">
+                                            <img src={post[0].url} alt=""  />
+                                        </div>
+                                    )
                                 }
                             </a>
                         </div>
@@ -128,7 +128,7 @@ export  function Comments() {
                             <a href={`https://www.reddit.com/user/${coment.data.author}`} target="_blank"  rel="noopener noreferrer">{coment.data.author}</a>
                             <p>-{formatTimeAgo(coment.data.created)}</p>
                         </div>
-                        <div className="comments-body">{coment.data.body}</div>
+                        <div className="comments-body" style={{ wordWrap: "break-word" }}>{coment.data.body}</div>
 
                         <div className="comment-vote">
                             <img src="/like.svg" alt="" className="comment-like"/>

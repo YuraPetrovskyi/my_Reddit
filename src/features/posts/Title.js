@@ -48,7 +48,7 @@ const Title = ({ post }) => {
                 <p>-{formatTimeAgo(post.created)}-</p>
             </div>
             <h2>{post.title}</h2>
-            <div className="post-information-self">
+            <div className="post-information-self" style={{ wordWrap: "break-word" }}>
                 {post.selftext ? <p >{post.selftext}</p> : ""}
             </div>
             <NavLink to={post.permalink} className="post-comments">
