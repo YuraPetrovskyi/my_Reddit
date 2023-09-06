@@ -9,14 +9,14 @@ import Title from "./Title";
 import Error from "./Error";
 
 
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { useSearchParams } from 'react-router-dom';
 
 export default function Posts() {
     const limit = ".json?limit=60";
     const dispatch = useDispatch();
-    // const location = useLocation();
+    const location = useLocation();
 
     const [ searchParams ] = useSearchParams();
     const searchTerm = searchParams.get('q');
@@ -39,8 +39,8 @@ export default function Posts() {
         // subredditElements.forEach((element) => {
         //     element.classList.remove("active");
         // });
-    }, [ dispatch, name, subredit, searchTerm]);
-
+    }, [ dispatch, name, subredit, searchTerm, location]);
+    // , location
 
     const { hasError } = useSelector(state => state.allPosts);
     console.log(hasError)

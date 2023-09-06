@@ -3,22 +3,25 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {loadComments} from "./commentSlice";
 
-import { useLocation } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
-
+// import { loadPosts } from "../posts/postsSlice";
 
 export  function Comments() {
     const dispatch = useDispatch();
     const location = useLocation();
-
+    const navigate = useNavigate();
 
     const {name, subredit, id, permalink  } = useParams();
     console.log(name, subredit, id,  permalink);
+    // const limit = ".json?limit=60";
 
     useEffect(() => {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
         dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
-    },[name, subredit, id, permalink, location, dispatch]);
+    },[name, subredit, id, permalink, location,  dispatch]);
+    
+    
 
 
     const allPosts = useSelector(state => state.allPosts.posts)
@@ -26,10 +29,20 @@ export  function Comments() {
 
     const post = allPosts.filter(topic => topic.id === id);
     console.log("пост з коментарем:", post)
-    const isComent = post[0].num_comments;
 
     const allComments = useSelector((state) => state.allComments.comments)
     console.log("коментарі:", allComments)
+    
+    if (!post.length) {        
+        navigate('/hot')
+        return null;
+    };
+    
+
+    const isComent = post[0].num_comments;
+
+
+    
 
     function formatNumber(number) {
         if (number >= 100000) {
