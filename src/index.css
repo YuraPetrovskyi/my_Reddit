@@ -32,7 +32,7 @@ ul li {
 }
 a, a:visited {
   text-decoration: none;
-  color: #807b5b;
+  color: #554B07;
 }
 a:link {
   /*background-color: greenyellow;*/
@@ -81,6 +81,13 @@ code {
   margin-right: 5%;
   font-family: 'Caveat', cursive;
   font-size: 3rem;
+}
+.logo-container p{
+  color: #f1f4f5;
+}
+.logo-container p:hover {
+  color: #08729d;
+  text-decoration: none;
 }
 .icon-logo{
   margin-right: 5%;
