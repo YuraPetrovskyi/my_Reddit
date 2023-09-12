@@ -10,7 +10,7 @@ export default function SubredditMenu() {
                 <p className="button-subreddit-text">Hot</p>
             </NavLink>
             <NavLink to="/new" className="button-subreddit" aria-label="go to new subreddit">
-                <img className="icon-subreddit" src="/icon/subcred/new.png" alt=""/>
+                <img className="icon-subreddit" src="/icon/subcred/new4.png" alt=""/>
                 <p className="button-subreddit-text">New</p>
             </NavLink>
             <NavLink to="/top" className="button-subreddit" aria-label="go to top subreddit">

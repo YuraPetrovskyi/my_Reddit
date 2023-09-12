@@ -20,7 +20,7 @@ export default function Posts() {
 
     const [ searchParams ] = useSearchParams();
     const searchTerm = searchParams.get('q');
-    console.log(searchTerm);
+    // console.log(searchTerm);
 
     const {name, subredit} = useParams();
     useEffect(() => {
@@ -43,9 +43,9 @@ export default function Posts() {
     // , location
 
     const { hasError } = useSelector(state => state.allPosts);
-    console.log(hasError)
+    // console.log(hasError)
     const allPosts = useSelector(state => state.allPosts.posts)
-    console.log(allPosts)
+    // console.log(allPosts)
 
     return (
         <div className="post-container" >

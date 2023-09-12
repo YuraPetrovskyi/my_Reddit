@@ -40,7 +40,7 @@ export default function Search() {
                 onChange={onSearchChangeHandler}
             />
             <button className="search-button">
-                <img className="search-icon" src="/search.svg" alt="search"/>
+                <img className="search-icon" src="/icon/navigator/search.svg" alt="search"/>
             </button>
         </form>
     )

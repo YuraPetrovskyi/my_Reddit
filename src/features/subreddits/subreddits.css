@@ -1,0 +1,97 @@
+.subreddits-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 170px;
+    display: flex;
+    color:  #554B07;
+    background-color: #e3eae5;
+    border: 1px solid rgba(128, 123, 91, 0.39);
+    font-family: 'Caveat', cursive;
+    /* position: relative; */
+}
+/*-----------------------------*/
+.button-subreddit {
+    background-color: rgba(168, 171, 187, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px 10px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    text-align: center;
+}
+.icon-subreddit {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.7rem;
+}
+/*---------------------------------------*/
+/* body .subreddits-container {
+  display: none;
+} */
+.subreddit-title {
+    text-align: center;
+    display: none;
+    /* border-bottom: #807b5b; */
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+}
+.subreddit-title:hover {
+    color: #08729d;
+}
+
+
+
+/*-----------------------------------------*/
+.subreddit-list {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center  ;*/
+    /*тут я зроби змыни!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    /*border-top: 200px #444444;*/
+    margin: 0 5px 10px;
+    border-top: 1px solid rgba(128, 123, 91, 0.39);
+    /*margin-bottom: 10px;*/
+}
+.subreddit-list-element {
+    /* margin-top: 10px; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+.subreddit-list-container {
+    height: 30px;
+    width: 30px;
+    border-radius:50%;
+    border: 3px solid white;
+    overflow: hidden;
+}
+.subreddit-list-container img{
+    height: 30px;
+    width: 30px;
+}
+/*----------------------------------*/
+/*.button-top-container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  position: sticky;*/
+/*  top: 180px;*/
+/*  z-index: 5;*/
+/*  margin: 0 5px;*/
+/*  border-top: 1px solid rgba(128, 123, 91, 0.39);*/
+/* }*/
+.button-top-container {
+    position: sticky;
+    top: 70px;
+}
+.button-top {
+    cursor: pointer;
+    width: 60px;
+}
+.button-top img {
+    width: 100%;
+    opacity: 0.3;
+}

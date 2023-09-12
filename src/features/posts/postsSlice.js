@@ -7,7 +7,7 @@ export  const loadPosts = createAsyncThunk(
 
         const currentState = thunkAPI.getState();
         console.log('Current state with postSlice:', currentState);
-        console.log('адреса фiтчу',`${urlAPI}${path}`)
+        // console.log('адреса фiтчу',`${urlAPI}${path}`)
 
         const data = await fetch(`${urlAPI}${path}`);
         const json = await data.json();

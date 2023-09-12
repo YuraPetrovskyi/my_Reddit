@@ -13,7 +13,7 @@ export  function Comments() {
     const navigate = useNavigate();
 
     const {name, subredit, id, permalink  } = useParams();
-    console.log(name, subredit, id,  permalink);
+    // console.log(name, subredit, id,  permalink);
     // const limit = ".json?limit=60";
 
     useEffect(() => {
@@ -24,16 +24,16 @@ export  function Comments() {
 
 
     const allPosts = useSelector(state => state.allPosts.posts)
-    console.log(allPosts)
+    // console.log(allPosts)
 
     const post =  allPosts.filter(topic => topic.id === id);
-    console.log("пост з коментарем:", post)
+    // console.log("пост з коментарем:", post)
 
     // const post = useSelector(state => state.allPosts.posts.find(topic => topic.id === id));
     // console.log("пост з коментарем:", post);
 
     const allComments = useSelector((state) => state.allComments.comments)
-    console.log("коментарі:", allComments)
+    // console.log("коментарі:", allComments)
     
     if (!post.length) {
         navigate('/hot')
@@ -127,7 +127,7 @@ export  function Comments() {
                 <p >{post[0].selftext}</p>
 
                 <p className="comment-icon-container">
-                    <img src="/comment.svg" alt="" className="comment-icon"/>
+                    <img src="/icon/comments/comment.svg" alt="" className="comment-icon"/>
                     {isComent ? (
                         <p>{formatNumber(post[0].num_comments)} Comments </p>
                     ) : (
@@ -147,9 +147,9 @@ export  function Comments() {
                         <div className="comments-body" style={{ wordWrap: "break-word" }}>{coment.data.body}</div>
 
                         <div className="comment-vote">
-                            <img src="/like.svg" alt="" className="comment-like"/>
+                            <img src="/icon/comments/like.svg" alt="" className="comment-like"/>
                             {coment.data.score ? formatNumber(coment.data.score) : "0" }
-                            <img src="/like.svg" alt="" className="comment-like-rotation"/>
+                            <img src="/icon/comments/like.svg" alt="" className="comment-like-rotation"/>
                         </div>
                     </div>
                 ))}

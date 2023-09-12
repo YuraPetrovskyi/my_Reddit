@@ -1,0 +1,69 @@
+.search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f1f1f;
+    width: 100%;
+    border-bottom: 2px solid white;
+    color: #807e78;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+}
+.logo-container p{
+    color: #f1f4f5;
+}
+.logo-container p:hover {
+    color: #08729d;
+    text-decoration: none;
+}
+.icon-logo{
+    margin-right: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    border: 3px solid white;
+    background-color: white;
+
+}
+/*------------------------------------------------*/
+.search-box{
+    width: 33%;
+    display: flex;
+    padding-left: 15%;
+}
+.search-input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ced1d6;
+    font-size: 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.search-input:focus {
+    border: 1px solid #f1f4f5; /* Змінюємо колір межі (border) при фокусі */
+    box-shadow: 15px 0 5px rgba(227, 234, 229, 0.5); /* Додаємо тінь для виділення поля */
+    outline: none; /* Забираємо стандартний  контур при фокусі (додайте це, якщо потрібно) */
+}
+.search-button{
+    background-color: #ced1d6;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.search-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

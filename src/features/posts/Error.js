@@ -16,7 +16,7 @@ const Error = () => {
             <h2>Ops! Something is wrong! Try again!</h2>
             <button onClick={onTryAgainHandler} className="error-button">
                 Go Home
-                <img src="/home.svg" alt=""/>
+                <img src="/icon/posts/home.svg" alt=""/>
             </button>
         </div>
     );
