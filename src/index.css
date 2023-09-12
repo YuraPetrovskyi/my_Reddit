@@ -108,6 +108,11 @@ code {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+.search-input:focus {
+  border: 1px solid #f1f4f5; /* Змінюємо колір межі (border) при фокусі */
+  box-shadow: 15px 0 5px rgba(227, 234, 229, 0.5); /* Додаємо тінь для виділення поля */
+  outline: none; /* Забираємо стандартний синій контур при фокусі (додайте це, якщо потрібно) */
+}
 .search-button{
   background-color: #ced1d6;
   border-top-right-radius: 10px;

@@ -529,9 +529,6 @@
   body .post-information-self {
     max-width: 250px;
     max-height: 100px;
-    /* max-width: 200; */
-    /* overflow: hidden; */
-    /* background-color: rgb(65, 40, 186); */
   } 
   body .post-information-container h2 {
     font-size: 1.2rem;
@@ -550,4 +547,12 @@
     margin: 0 auto;
   } 
 
+}
+@media (max-width: 320px) {
+  body .button-top {
+    display: none;
+  }
+  body .subreddit-list.active {
+    top: 92px;
+  }
 }

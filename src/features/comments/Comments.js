@@ -20,29 +20,32 @@ export  function Comments() {
         window.scrollTo(0, 0);
         dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
     },[name, subredit, id, permalink, location,  dispatch]);
-    
-    
+
 
 
     const allPosts = useSelector(state => state.allPosts.posts)
     console.log(allPosts)
 
-    const post = allPosts.filter(topic => topic.id === id);
+    const post =  allPosts.filter(topic => topic.id === id);
     console.log("пост з коментарем:", post)
+
+    // const post = useSelector(state => state.allPosts.posts.find(topic => topic.id === id));
+    // console.log("пост з коментарем:", post);
 
     const allComments = useSelector((state) => state.allComments.comments)
     console.log("коментарі:", allComments)
     
-    if (!post.length) {        
+    if (!post.length) {
         navigate('/hot')
         return null;
-    };
-    
+    }
+    // if (!post) {
+    //     return (
+    //         <div>Loading post...</div>
+    //     );
+    // }
 
     const isComent = post[0].num_comments;
-
-
-    
 
     function formatNumber(number) {
         if (number >= 100000) {
