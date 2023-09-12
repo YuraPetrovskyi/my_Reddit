@@ -18,7 +18,7 @@ const Media = ({ post }) => {
                 <div >
                     { isImageHint ? (
                         <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container" >
-                            <img src={post.url} alt="" width="200" height="auto"/>
+                            <img src={post.url} alt="" />
                         </a>
                     ) : (
                         <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container">
