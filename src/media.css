@@ -159,11 +159,12 @@
   }
   body .button-top {
     cursor: pointer;
-    width: 50px;
+    /*width: 60px;*/
   }
   body .button-top-container {
     position: static;
-    margin: auto  0;
+    margin-top: 5px;
+    /*top: 0;*/
   }
   body .post {
     margin: 0 0 2px 0px;
@@ -325,11 +326,12 @@
   }
   body .button-top {
     cursor: pointer;
-    width: 50px;
+    /*width: 50px;*/
   }
   body .button-top-container {
     position: static;
-    margin: auto  0;
+    margin-top: 5px;
+    /*top: 0;*/
   }
 
 /* --------------------------------------- */
@@ -502,7 +504,7 @@
   }
   body .button-top-container {
     position: static;
-    margin: auto  0;
+    margin-top: 5px;
   }
 
 

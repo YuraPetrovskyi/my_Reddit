@@ -14,7 +14,7 @@ import { useLocation } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 
 export default function Posts() {
-    const limit = ".json?limit=60";
+    const limit = ".json?limit=40";
     const dispatch = useDispatch();
     const location = useLocation();
 

@@ -72,7 +72,7 @@ export default function SubredditLinks() {
                     </NavLink>
                     <NavLink to="r/UkrainianConflict" className="subreddit-list-element"  onClick={removeClassActive}>
                         <div className="subreddit-list-container">
-                            <img src="/UkraineWor.gif" alt="logo of subreddit" />
+                            <img src="/UkraineTwo.png" alt="logo of subreddit" />
                         </div>
                         <p>r/UkrainianConflict</p>
                     </NavLink>
