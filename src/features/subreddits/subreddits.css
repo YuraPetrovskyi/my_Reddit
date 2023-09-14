@@ -55,6 +55,7 @@
     border-top: 1px solid rgba(128, 123, 91, 0.39);
     /*margin-bottom: 10px;*/
 }
+
 .subreddit-list-element {
     /* margin-top: 10px; */
     padding: 5px;
@@ -73,16 +74,7 @@
     height: 30px;
     width: 30px;
 }
-/*----------------------------------*/
-/*.button-top-container {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  position: sticky;*/
-/*  top: 180px;*/
-/*  z-index: 5;*/
-/*  margin: 0 5px;*/
-/*  border-top: 1px solid rgba(128, 123, 91, 0.39);*/
-/* }*/
+
 .button-top-container {
     position: sticky;
     top: 70px;
