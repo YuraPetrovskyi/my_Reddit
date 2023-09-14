@@ -18,8 +18,6 @@ export default function SubredditLinks() {
         const bodyElement = document.body;
         if (isActive) {
             bodyElement.classList.remove("lock");
-        } else {
-            bodyElement.classList.add("lock");
         }
     };
 
