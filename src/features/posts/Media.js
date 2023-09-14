@@ -7,9 +7,17 @@ const Media = ({ post }) => {
     return (
         <div className="media" >
             { isVideo ? (
-                <div className="madia-video">
+                <div className="media-video">
                     <video  controls>
+                        <source src={post.url + "/DASHPlaylist.mpd"} type="application/dash+xml" />
                         <source src={post.url + "/DASH_360.mp4"} type="video/mp4"/>
+                        <source src={post.url + "/DASH_270.mp4"} type="video/mp4"/>
+                        <source src={post.url + "/DASH_96.mp4"} type="video/mp4"/>
+                        <source src={post.url + "/DASH_360.webm"} type="video/webm" />
+                        <source src={post.url + "/DASH_360.ogv"} type="video/ogg" />
+                        <source src={post.url + "/DASH_360.avi"} type="video/x-msvideo" />
+                        <source src={post.url + "/DASH_360.flv"} type="video/x-flv" />
+                        <source src={post.url + "/DASH_360.mkv"} type="video/x-matroska" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -22,7 +30,7 @@ const Media = ({ post }) => {
                         </a>
                     ) : (
                         <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container">
-                            <img src="/title.svg"  alt="" className="media-no-img"/>
+                            <img src="/icon/posts/title.svg"  alt="" className="media-no-img"/>
                         </a>
                     )}
                 </div>

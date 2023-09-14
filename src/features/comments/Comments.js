@@ -27,7 +27,7 @@ export  function Comments() {
     // console.log(allPosts)
 
     const post =  allPosts.filter(topic => topic.id === id);
-    // console.log("пост з коментарем:", post)
+    console.log("пост з коментарем:", post)
 
     // const post = useSelector(state => state.allPosts.posts.find(topic => topic.id === id));
     // console.log("пост з коментарем:", post);
@@ -97,13 +97,19 @@ export  function Comments() {
                 <div className="comment-post-media" >
                     { post[0].is_video  ? (
                         <div className="comment-video" >
-                            <video  controls>
+                            <video  controls >
+                                <source src={post[0].url + "/DASHPlaylist.mpd"} type="application/dash+xml" />
                                 <source src={post[0].url + "/DASH_360.mp4"} type="video/mp4"/>
+                                <source src={post[0].url  + "/DASH_270.mp4"} type="video/mp4"/>
+                                <source src={post[0].url  + "/DASH_96.mp4"} type="video/mp4"/>
+                                <source src={post[0].url + "/DASH_360.webm"} type="video/webm" />
+                                <source src={post[0].url + "/DASH_360.ogv"} type="video/ogg" />
+                                <source src={post[0].url + "/DASH_360.avi"} type="video/x-msvideo" />
+                                <source src={post[0].url + "/DASH_360.flv"} type="video/x-flv" />
+                                <source src={post[0].url  + "/DASH_360.mkv"} type="video/x-matroska" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-
-
                     ) : (
                         <div className="comment-img-container">
                             <a href={post[0].url} target="_blank"  rel="noopener noreferrer">
@@ -134,6 +140,7 @@ export  function Comments() {
                         <p>0 Comment</p>
                     )}
                 </p>
+                <a className="comment-link-to-reddit" href={post[0].url} target="_blank"  rel="noopener noreferrer">go to Reddit ...</a>
 
             </div>
             <div >

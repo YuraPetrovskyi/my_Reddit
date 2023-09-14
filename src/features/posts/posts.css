@@ -57,21 +57,13 @@
     overflow: hidden;
 }
 
-.madia-video{
+.media-video{
     display: flex;
     align-items: center;
     max-width: 200px;
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*align-items: center;*/
-    /*flex-basis: 30%;*/
-    /*margin-top: 5px;*/
-    /*margin-right: 5px;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*margin: 5px 0;*/
+
 }
-.madia-video video{
+.media-video video{
     width: 100%;
 }
 
