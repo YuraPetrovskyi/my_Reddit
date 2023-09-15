@@ -14,29 +14,46 @@ export  const loadPosts = createAsyncThunk(
         return json.data.children.map((post) => post.data);
     }
 )
+const initialState = {
+    posts: [],
+    isLoading: false,
+    hasError: false,
+};
 export const postsSlice = createSlice({
     name: 'allPosts',
-    initialState: {
-        posts:[],
-        isLoading: false,
-        hasError: false
-    },
+    initialState,
     reducers: {},
-    extraReducers: {
-        [loadPosts.pending]: (state) => {
-            state.isLoading = true;
-            state.hasError = false;
-        },
-        [loadPosts.fulfilled]: (state, action) => {
-            state.posts = action.payload;
-            state.isLoading = false;
-            state.hasError = false;
-        },
-        [loadPosts.rejected]: (state) => {
-            state.isLoading = false;
-            state.hasError = true;
-        }
-    }
+    extraReducers: (builder) => {
+        builder
+            .addCase(loadPosts.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+            })
+            .addCase(loadPosts.fulfilled, (state, action) => {
+                state.posts = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+            })
+            .addCase(loadPosts.rejected, (state) => {
+                state.isLoading = false;
+                state.hasError = true;
+            });
+    },
+    // extraReducers: {
+    //     [loadPosts.pending]: (state) => {
+    //         state.isLoading = true;
+    //         state.hasError = false;
+    //     },
+    //     [loadPosts.fulfilled]: (state, action) => {
+    //         state.posts = action.payload;
+    //         state.isLoading = false;
+    //         state.hasError = false;
+    //     },
+    //     [loadPosts.rejected]: (state) => {
+    //         state.isLoading = false;
+    //         state.hasError = true;
+    //     }
+    // }
 });
 export default postsSlice.reducer;
 

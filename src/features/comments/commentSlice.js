@@ -19,30 +19,46 @@ export  const loadComments = createAsyncThunk(
         return json[1].data.children;
     }
 )
-
+const initialState = {
+    comments: [],
+    isLoading: false,
+    hasError: false,
+};
 export const commentSlice = createSlice({
     name: 'allComments',
-    initialState: {
-        comments:[],
-        isLoading: false,
-        hasError: false
-    },
+    initialState,
     reducers: {},
-    extraReducers: {
-        [loadComments.pending]: (state, action) => {
-            state.isLoading = true;
-            state.hasError = false;
-        },
-        [loadComments.fulfilled]: (state, action) => {
-            state.comments = action.payload;
-            state.isLoading = false;
-            state.hasError = false;
-        },
-        [loadComments.rejected]: (state, action) => {
-            state.isLoading = false;
-            state.hasError = true;
-        }
-    }
+    extraReducers: (builder) => {
+        builder
+            .addCase(loadComments.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+            })
+            .addCase(loadComments.fulfilled, (state, action) => {
+                state.comments = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+            })
+            .addCase(loadComments.rejected, (state) => {
+                state.isLoading = false;
+                state.hasError = true;
+            });
+    },
+    // extraReducers: {
+    //     [loadComments.pending]: (state, action) => {
+    //         state.isLoading = true;
+    //         state.hasError = false;
+    //     },
+    //     [loadComments.fulfilled]: (state, action) => {
+    //         state.comments = action.payload;
+    //         state.isLoading = false;
+    //         state.hasError = false;
+    //     },
+    //     [loadComments.rejected]: (state, action) => {
+    //         state.isLoading = false;
+    //         state.hasError = true;
+    //     }
+    // }
 });
 
 export default commentSlice.reducer;
