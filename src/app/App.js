@@ -12,8 +12,8 @@ const router = createBrowserRouter( createRoutesFromElements(
         <Route index element={<Posts/>}/>
         <Route path="/search" element={<Posts />} />
         <Route path=":name" element={<Posts/>}/>
-        <Route path=":name/:subredit" element={<Posts/>}/>
-        <Route path=":name/:subredit/comments/:id/:permalink/" element={<Comments />}/>
+        <Route path=":name/:subreddit" element={<Posts/>}/>
+        <Route path=":name/:subreddit/comments/:id/:permalink/" element={<Comments />}/>
     </Route>
 ))
 

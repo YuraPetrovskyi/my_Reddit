@@ -5,21 +5,31 @@ import {loadComments} from "./commentSlice";
 
 import {useLocation, useNavigate} from "react-router-dom";
 
+
 // import { loadPosts } from "../posts/postsSlice";
+import { animateScroll as scroll } from 'react-scroll';
 
 export  function Comments() {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
 
-    const {name, subredit, id, permalink  } = useParams();
-    // console.log(name, subredit, id,  permalink);
+    const {name, subreddit, id, permalink  } = useParams();
+    // console.log(name, subreddit, id,  permalink);
     // const limit = ".json?limit=60";
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-        dispatch(loadComments(`/${name}/${subredit}/comments/${id}/${permalink}`))
-    },[name, subredit, id, permalink, location,  dispatch]);
+        // window.scrollTo(0, 0);
+        try {
+            scroll.scrollToTop({
+                duration: 50, // Тривалість анімації в мілісекундах
+            });
+        } catch (error) {
+            // Обробка помилки: ігнорування в середовищі тестування
+            console.error("Помилка під час виклику window.scrollTo:", error);
+        }
+        dispatch(loadComments(`/${name}/${subreddit}/comments/${id}/${permalink}`))
+    },[name, subreddit, id, permalink, location,  dispatch]);
 
 
 
@@ -27,7 +37,7 @@ export  function Comments() {
     // console.log(allPosts)
 
     const post =  allPosts.filter(topic => topic.id === id);
-    console.log("пост з коментарем:", post)
+    // console.log("пост з коментарем:", post)
 
     // const post = useSelector(state => state.allPosts.posts.find(topic => topic.id === id));
     // console.log("пост з коментарем:", post);
@@ -132,30 +142,30 @@ export  function Comments() {
 
                 <p >{post[0].selftext}</p>
 
-                <p className="comment-icon-container">
+                <div className="comment-icon-container">
                     <img src="/icon/comments/comment.svg" alt="" className="comment-icon"/>
                     {isComent ? (
                         <p>{formatNumber(post[0].num_comments)} Comments </p>
                     ) : (
                         <p>0 Comment</p>
                     )}
-                </p>
+                </div>
                 <a className="comment-link-to-reddit" href={post[0].url} target="_blank"  rel="noopener noreferrer">go to Reddit ...</a>
 
             </div>
             <div >
-                {allComments.map((coment) => (
-                    <div className="comment-content">
+                {allComments.map((comment) => (
+                    <div key={comment.data.id} className="comment-content">
                         <div className="posted-by">
                             <p>Comment by</p>
-                            <a href={`https://www.reddit.com/user/${coment.data.author}`} target="_blank"  rel="noopener noreferrer">{coment.data.author}</a>
-                            <p>-{formatTimeAgo(coment.data.created)}</p>
+                            <a href={`https://www.reddit.com/user/${comment.data.author}`} target="_blank"  rel="noopener noreferrer">{comment.data.author}</a>
+                            <p>-{formatTimeAgo(comment.data.created)}</p>
                         </div>
-                        <div className="comments-body" style={{ wordWrap: "break-word" }}>{coment.data.body}</div>
+                        <div className="comments-body" style={{ wordWrap: "break-word" }}>{comment.data.body}</div>
 
                         <div className="comment-vote">
                             <img src="/icon/comments/like.svg" alt="" className="comment-like"/>
-                            {coment.data.score ? formatNumber(coment.data.score) : "0" }
+                            {comment.data.score ? formatNumber(comment.data.score) : "0" }
                             <img src="/icon/comments/like.svg" alt="" className="comment-like-rotation"/>
                         </div>
                     </div>

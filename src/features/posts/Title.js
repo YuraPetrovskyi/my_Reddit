@@ -53,7 +53,7 @@ const Title = ({ post }) => {
             </div>
             <NavLink to={post.permalink} className="post-comments">
                 <img className="post-comments-icon" src="/icon/posts/comments.png" alt="icon button voute minus"/>
-                {isComent ? (
+                { isComent > 0 ? (
                     <p>{formatNumber(isComent)} Comments </p>
                 ) : (
                     <p>0 Comment</p>

@@ -28,7 +28,7 @@ export default function SubredditLinks() {
     return (
         <div>
             <button  className="subreddit-title" onClick={toggleClass}>
-                Subcredits
+                Subreddits
             </button>
             <div className={`subreddit-list ${activeClass}`} >
                 <div className="subreddits-list-body">
@@ -38,7 +38,7 @@ export default function SubredditLinks() {
                         </div>
                         <p>r/GreatBritishMemes</p>
                     </NavLink>
-                    <NavLink active to="r/javascript" className="subreddit-list-element"  onClick={removeClassActive}>
+                    <NavLink to="r/javascript" className="subreddit-list-element"  onClick={removeClassActive}>
                         <div className="subreddit-list-container">
                             <img src="/icon/subreddits/JS.png" alt="logo of subreddit" />
                         </div>

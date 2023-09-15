@@ -11,10 +11,10 @@ export  const loadComments = createAsyncThunk(
         console.log('Current state loadComments:', currentState);
 
         const data = await fetch(`${urlAPI}${compath}.json`);
-        console.log(`${urlAPI}${compath}.json`)
+        // console.log(`${urlAPI}${compath}.json`)
 
         const json = await data.json();
-        console.log("json is: ", json[1].data.children);
+        // console.log("json is: ", json[1].data.children);
 
         return json[1].data.children;
     }
