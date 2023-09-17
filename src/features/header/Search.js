@@ -15,7 +15,7 @@ export default function Search() {
     }
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("searchValue: ", searchValue);
+        // console.log("searchValue: ", searchValue);
         // const query = {
         //     q: searchValue
         // }

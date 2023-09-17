@@ -9,8 +9,8 @@ export function TopButton() {
 
     return (
         <div >
-            <button className="button-top" onClick={scrollTopHandler} aria-label="button to go up">
-                <img src="/icon/subreddits/top_arrow.svg" alt="" width="60" height="60"/>
+            <button className="button-top" onClick={scrollTopHandler} aria-label="button let`s up">
+                <img src="/icon/subreddits/top_arrow.svg" alt="let`s up" width="60" height="60"/>
             </button>
         </div>
     )

@@ -3,60 +3,90 @@ import { Provider } from 'react-redux';
 import "regenerator-runtime/runtime";
 
 import App from "../app/App";
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import store from "../app/store";
 // import 'jsdom-global/register';
 
-it("just test App", async () => {
-    await act(async () => {
+import userEvent from '@testing-library/user-event';
+
+describe('HeaderBar Component', () => {
+    function renderApp() {
         render(
             <Provider store={store}>
                 <App />
             </Provider>
-        );
+        )
+    }
+
+    it('Should display logo of HeaderBar component', () => {
+        renderApp();
+        const textElement = screen.getByText('myReddit');
+        expect(textElement).toBeInTheDocument();
+    });
+    it('Should display img of logo of HeaderBar component', () => {
+        renderApp();
+        const iconElement = screen.getByAltText('icon logo myReddit');
+        expect(iconElement).toBeInTheDocument();
+    });
+    it('Should display input of HeaderBar component', () => {
+        renderApp();
+        const inputElement = screen.getByPlaceholderText('Search');
+        expect(inputElement).toBeInTheDocument();
+    });
+    it('Should display search button of HeaderBar component', () => {
+        renderApp();
+        const buttonElement = screen.getByRole('button', { name: 'search' });
+        expect(buttonElement).toBeInTheDocument();
+    });
+    it('"search input" should  have value as Mack!',  () => {
+        renderApp();
+        const inputElement = screen.getByPlaceholderText('Search');
+        expect(inputElement).toBeInTheDocument();
+        // Emulate user input in input
+        act(() => {
+            userEvent.type(inputElement, 'Mack!');
+        });
+        // We check whether the value in input has changed
+        expect(inputElement).toHaveValue('Mack!');
+        // Reset the state of imputation
+        act(() => {
+            userEvent.type(inputElement, '{enter}');
+        });
+    });
+    it('"search input" should be empty after button click or enter', () => {
+        renderApp();
+        const inputElement = screen.getByPlaceholderText('Search');
+        expect(inputElement).toBeInTheDocument();
+        // Emulate user input in input
+        act(() => {
+            userEvent.type(inputElement, 'Mack!');
+        });
+        // We check whether the value in input has changed
+        expect(inputElement).toHaveValue('Mack!');
+        // Emulate pressing Enter
+        act(() => {
+            userEvent.type(inputElement, '{enter}');
+        });
+        expect(inputElement).toHaveValue('');
+
+        // Emulate pressing the search button
+        act(() => {
+            userEvent.type(inputElement, 'Mack!');
+        });
+        expect(inputElement).toHaveValue('Mack!');
+        const searchButton = screen.getByRole('button', { name: 'search' });
+        act(() => {
+            fireEvent.click(searchButton);
+        });
+        expect(inputElement).toHaveValue('');
     });
 
-    screen.debug();
-    // const texparagraf = screen.getByText('r/GreatBritishMemes');
-    // expect(texparagraf).toBeInTheDocument()
 });
 
-// it("converts array of country data objects to array of countries", ()=>{
-//     //arrange
-//     const inputObject = [
-//         {name: "Argentina", capital: "Buenos Aires"},
-//         {name: "Belize", capital: "Belmopan"},
-//         {name: "Bolivia", capital: "Sucre"}
-//     ]
-//     const expectedValue = ["Argentina","Belize","Bolivia"]
-//
-//     //act
-//     const actualValue = ["Argentina","Belize","Bolivia"]
-//
-//     //assert
-//     expect(actualValue).toEqual(expectedValue);
-//     expect(actualValue[0]).toBe("Argentina");
-//     expect(actualValue).toContain("Belize");
-//     expect(actualValue[2] === "Bolivia").toBeTruthy();
-//     expect(actualValue[3]).not.toBeDefined();
-//
-// });
-
-// it("just test SubreditLinks", () => {
-//     render(<SubredditLinks />);
-//     // const texparagraf = screen.getByText('r/GreatBritishMemes');
-//     // expect(texparagraf).toBeInTheDocument()
-// });
 
 
 
-//App.test.js
-// import { render, screen } from '@testing-library/react';
-// import App from './app/App';
-//
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+
+
+

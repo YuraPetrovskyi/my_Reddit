@@ -33,7 +33,7 @@ export default function Posts() {
             });
         } catch (error) {
             // Обробка помилки: ігнорування в середовищі тестування
-            console.error("Помилка під час виклику window.scrollTo:", error);
+            console.error("An error occurred during the call window.scrollTo:", error);
         }
         if (searchTerm) {
             dispatch(loadPosts(`/search.json?q=${searchTerm}`));

@@ -7,8 +7,8 @@ export  const loadComments = createAsyncThunk(
     "allComments/loadComments",
     async (compath="", thunkAPI) => {
 
-        const currentState = thunkAPI.getState();
-        console.log('Current state loadComments:', currentState);
+        // const currentState = thunkAPI.getState();
+        // console.log('Current state loadComments:', currentState);
 
         const data = await fetch(`${urlAPI}${compath}.json`);
         // console.log(`${urlAPI}${compath}.json`)
