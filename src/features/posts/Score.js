@@ -16,7 +16,7 @@ const Score = ({post}) => {
     return (
         <div className="post-score-container">
             <button>
-                <img className="post-score-icon-plus" src="/icon/posts/voute-black.svg" alt="icon button voute minus"/>
+                <img className="post-score-icon-plus" src="/icon/posts/voute-black.svg" alt="icon button voute plus"/>
             </button>
 
             <p className="post-score"> {formatNumber(post.score)} </p>

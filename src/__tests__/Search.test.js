@@ -6,7 +6,6 @@ import App from "../app/App";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import store from "../app/store";
-// import 'jsdom-global/register';
 
 import userEvent from '@testing-library/user-event';
 
@@ -83,10 +82,3 @@ describe('HeaderBar Component', () => {
     });
 
 });
-
-
-
-
-
-
-

@@ -7,8 +7,6 @@ import { render, screen, fireEvent  } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import store from "../app/store";
 
-import userEvent from '@testing-library/user-event';
-
 describe('Subreddits Component', () => {
     function renderApp() {
         render(
@@ -120,7 +118,7 @@ describe('Subreddits Component', () => {
             renderApp();
             const buttonElement = screen.getByRole('button', { name: 'button let`s up' });
             expect(buttonElement).toBeInTheDocument();
-            screen.debug();
+
         });
     });
 

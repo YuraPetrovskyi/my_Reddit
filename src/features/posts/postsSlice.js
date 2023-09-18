@@ -39,21 +39,7 @@ export const postsSlice = createSlice({
                 state.hasError = true;
             });
     },
-    // extraReducers: {
-    //     [loadPosts.pending]: (state) => {
-    //         state.isLoading = true;
-    //         state.hasError = false;
-    //     },
-    //     [loadPosts.fulfilled]: (state, action) => {
-    //         state.posts = action.payload;
-    //         state.isLoading = false;
-    //         state.hasError = false;
-    //     },
-    //     [loadPosts.rejected]: (state) => {
-    //         state.isLoading = false;
-    //         state.hasError = true;
-    //     }
-    // }
+
 });
 export default postsSlice.reducer;
 
@@ -86,4 +72,20 @@ export default postsSlice.reducer;
 //     console.log(`${urlAPI}${path}${limit}`)
 //     data = await fetch(`${urlAPI}${path}${limit}`);
 //
+// }
+
+// extraReducers: {
+//     [loadPosts.pending]: (state) => {
+//         state.isLoading = true;
+//         state.hasError = false;
+//     },
+//     [loadPosts.fulfilled]: (state, action) => {
+//         state.posts = action.payload;
+//         state.isLoading = false;
+//         state.hasError = false;
+//     },
+//     [loadPosts.rejected]: (state) => {
+//         state.isLoading = false;
+//         state.hasError = true;
+//     }
 // }

@@ -1,74 +1,69 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [_myReddit_](https://lucent-piroshki-874535.netlify.app/)
+![my Reddit.png](..%2F..%2F..%2Fmy%20Reddit.png) 
+It's a pocket version of the American social network news, content ratings and discussion website - [Reddit](https://www.reddit.com/)
 
-## Available Scripts
+## Review
 
-In the project directory, you can run:
+[_myReddit_](https://lucent-piroshki-874535.netlify.app/) helps you view specific content that registered users have submitted to [Reddit](https://www.reddit.com/).
 
-### `npm start`
+[_myReddit_](https://lucent-piroshki-874535.netlify.app/) is an adaptive application that makes it possible to use it comfortably on mobile devices, as well as on large monitors and tablets
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My Reddit allows:
+- *view links, text messages, images and videos (although without sound due to API limitations);*
+- *viewing the number of votes received by each publication;*
+- *view comments for each publication;*
+- *use the site's search engine to find the content you need;*
+- *follow the link to the original* [Reddit](https://www.reddit.com/);
+- *sort the posts according to your preferences by 10 subreddits;*
+- *sort the posts according to your preferences by  the popularity of the post or the time of publication, as well as 
+  view the posts that are gaining popularity;*
+- *see who published the post and when;*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+ - React : *Interface library*
+ - Redux : *Global state management*
+ - Jest & React Testing Library (RTL): *Testing suite*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main codebase consists of Javascript.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone or download the repo.
+Open the directory and run npm to install.
+Run development application by using npm start.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Using
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The *"public"* folder contains an *"img"* folder with all the icons.
 
-### `npm run eject`
+The *"test"* folder contains tests for the main components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The *"features"* folder contains the main components and slices: HeaderBar, Subreddits, Posts and Comments.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The *"header"* folder contains components and slice that are responsible for displaying the top part of the site:
+- logo;
+- and input for data search;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The *"subcredits"* folder contains the slideshow components that display the navigation bar on the left, which consists of 
+three parts:
+- buttons for sorting posts;
+- list of subreddits;
+- a button to go to the top of the window;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The *"post"* folder contains components and a slice for displaying the main content of the post and media.
 
-## Learn More
+The *"comment"* folder contains a component and a Slice for displaying a specific post and comments.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project utilizes the Reddit JSON API to retrieve data from Reddit.
 
-### Code Splitting
+*The project was a task assigned by Codecademy as part of their full-stack engineer course path. The objective of 
+the project was to demonstrate all the skills and technologies learned up to this point on the path, including 
+HTML/CSS, JavaScript, React, Redux, Jest and RTL, Git and GitHub Projects, and command-line proficiency*.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# my_Reddit
->>>>>>> 5a320701d79e069088b26b70255b08002ebdeaec
+## Developers
+[_myReddit_](https://lucent-piroshki-874535.netlify.app/)  created by *Yurii Petrovsky*
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

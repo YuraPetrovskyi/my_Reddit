@@ -5,7 +5,7 @@ const Media = ({ post }) => {
     const isImageHint = post.post_hint === "image";
 
     return (
-        <div className="media" >
+        <div className="media" data-testid="media-container" >
             { isVideo ? (
                 <div className="media-video">
                     <video  controls>
@@ -25,11 +25,11 @@ const Media = ({ post }) => {
             ) : (
                 <div >
                     { isImageHint ? (
-                        <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container" >
+                        <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container" aria-label="link to the original Reddit page">
                             <img src={post.url} alt="" />
                         </a>
                     ) : (
-                        <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container">
+                        <a href={post.url} target="_blank"  rel="noopener noreferrer" className="media-img-container" aria-label="link to the original Reddit page">
                             <img src="/icon/posts/title.svg"  alt="" className="media-no-img"/>
                         </a>
                     )}
