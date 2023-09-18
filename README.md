@@ -1,7 +1,7 @@
 
 # [_myReddit_](https://lucent-piroshki-874535.netlify.app/)
-![my Reddit.png](..%2F..%2F..%2Fmy%20Reddit.png) 
 It's a pocket version of the American social network news, content ratings and discussion website - [Reddit](https://www.reddit.com/)
+![myReddit](./public/myReddit.png)
 
 ## Review
 
