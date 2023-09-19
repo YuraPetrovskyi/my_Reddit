@@ -10,15 +10,15 @@ It's a pocket version of the American social network news, content ratings and d
 [_myReddit_](https://lucent-piroshki-874535.netlify.app/) is an adaptive application that makes it possible to use it comfortably on mobile devices, as well as on large monitors and tablets
 
 My Reddit allows:
-- *view links, text messages, images and videos (although without sound due to API limitations);*
-- *viewing the number of votes received by each publication;*
-- *view comments for each publication;*
-- *use the site's search engine to find the content you need;*
-- *follow the link to the original* [Reddit](https://www.reddit.com/);
-- *sort the posts according to your preferences by 10 subreddits;*
+- *view links, text messages, images and videos (although without sound due to API limitations)*
+- *viewing the number of votes received by each publication*
+- *view comments for each publication*
+- *use the site's search engine to find the content you need*
+- *follow the link to the original* [Reddit](https://www.reddit.com/)
+- *sort the posts according to your preferences by 10 subreddits*
 - *sort the posts according to your preferences by  the popularity of the post or the time of publication, as well as 
-  view the posts that are gaining popularity;*
-- *see who published the post and when;*
+  view the posts that are gaining popularity*
+- *see who published the post and when*
 
 ## Technologies
 
@@ -43,14 +43,14 @@ The *"test"* folder contains tests for the main components.
 The *"features"* folder contains the main components and slices: HeaderBar, Subreddits, Posts and Comments.
 
 The *"header"* folder contains components and slice that are responsible for displaying the top part of the site:
-- logo;
-- and input for data search;
+- logo
+- and input for data search
 
 The *"subcredits"* folder contains the slideshow components that display the navigation bar on the left, which consists of 
 three parts:
-- buttons for sorting posts;
-- list of subreddits;
-- a button to go to the top of the window;
+- buttons for sorting posts
+- list of subreddits
+- a button to go to the top of the window
 
 The *"post"* folder contains components and a slice for displaying the main content of the post and media.
 

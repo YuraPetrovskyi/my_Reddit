@@ -9,6 +9,8 @@ import {useLocation, useNavigate} from "react-router-dom";
 // import { loadPosts } from "../posts/postsSlice";
 import { animateScroll as scroll } from 'react-scroll';
 
+import {formatNumber, formatTimeAgo} from "../posts/Title";
+
 export  function Comments() {
     const dispatch = useDispatch();
     const location = useLocation();
@@ -26,7 +28,7 @@ export  function Comments() {
             });
         } catch (error) {
             // Обробка помилки: ігнорування в середовищі тестування
-            console.error("Помилка під час виклику window.scrollTo:", error);
+            console.error("An error occurred during the call window.scrollTo:", error);
         }
         dispatch(loadComments(`/${name}/${subreddit}/comments/${id}/${permalink}`))
     },[name, subreddit, id, permalink, location,  dispatch]);
@@ -34,7 +36,7 @@ export  function Comments() {
 
 
     const allPosts = useSelector(state => state.allPosts.posts)
-    // console.log(allPosts)
+    // console.log("всі пости: ", allPosts)
 
     const post =  allPosts.filter(topic => topic.id === id);
     // console.log("пост з коментарем:", post)
@@ -44,58 +46,25 @@ export  function Comments() {
 
     const allComments = useSelector((state) => state.allComments.comments)
     // console.log("коментарі:", allComments)
-    
+
+    useEffect(() => {
+        if (!post.length) {
+            navigate('/hot');
+        }
+    }, [post, navigate]);
+
     if (!post.length) {
-        navigate('/hot')
+        // navigate('/hot')
         return null;
     }
-    // if (!post) {
-    //     return (
-    //         <div>Loading post...</div>
-    //     );
-    // }
 
     const isComent = post[0].num_comments;
 
-    function formatNumber(number) {
-        if (number >= 100000) {
-            return (number / 1000000).toFixed(2) + "m";
-        }
-        if (number >= 1000) {
-            return (number / 1000).toFixed(1) + "k";
-        }
-        return number;
-    }
-
-    function formatTimeAgo(timestamp) {
-        const currentTime = Math.floor(Date.now() / 1000); // поточний час в секундах
-        const timeDifference = currentTime - timestamp; // різниця у секундах
-
-        if (timeDifference < 60) {
-            return `${timeDifference} seconds ago`;
-        } else if (timeDifference < 3600) {
-            const minutes = Math.floor(timeDifference / 60);
-            return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
-        } else if (timeDifference < 86400) {
-            const hours = Math.floor(timeDifference / 3600);
-            return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
-        } else if (timeDifference < 2592000) {
-            const days = Math.floor(timeDifference / 86400);
-            return `${days} ${days === 1 ? 'day' : 'days'} ago`;
-        } else if (timeDifference < 31536000) {
-            const months = Math.floor(timeDifference / 2592000);
-            return `${months} ${months === 1 ? 'month' : 'months'} ago`;
-        } else {
-            const years = Math.floor(timeDifference / 31536000);
-            return `${years} ${years === 1 ? 'year' : 'years'} ago`;
-        }
-    }
-
     return (
-        <section className="comments-container">
-            <div className="comment-post-information">
+        <section className="comments-container" data-testid="all-comments-container">
+            <div className="comment-post-information" data-testid="comment-post-container">
 
-                <div className="comment-by">
+                <div className="comment-by" data-testid="comment-post-by-container">
                     <a href={`https://www.reddit.com/${post[0].subreddit_name_prefixed}`} target="_blank"  rel="noopener noreferrer">{post[0].subreddit_name_prefixed}</a>
                     <p>posted by</p>
                     <a href={`https://www.reddit.com/user/${post[0].author}`} target="_blank"  rel="noopener noreferrer">{post[0].author}</a>
@@ -104,7 +73,7 @@ export  function Comments() {
 
                 <h2>{post[0].title}</h2>
 
-                <div className="comment-post-media" >
+                <div className="comment-post-media" data-testid="comment-post-media-container">
                     { post[0].is_video  ? (
                         <div className="comment-video" >
                             <video  controls >
@@ -140,9 +109,9 @@ export  function Comments() {
                     )}
                 </div>
 
-                <p >{post[0].selftext}</p>
+                <p data-testid="comment-selftext-container">{post[0].selftext}</p>
 
-                <div className="comment-icon-container">
+                <div className="comment-post-icon-container" data-testid="comment-post-icon-container">
                     <img src="/icon/comments/comment.svg" alt="" className="comment-icon"/>
                     {isComent ? (
                         <p>{formatNumber(post[0].num_comments)} Comments </p>
@@ -155,7 +124,7 @@ export  function Comments() {
             </div>
             <div >
                 {allComments.map((comment) => (
-                    <div key={comment.data.id} className="comment-content">
+                    <div key={comment.data.id} className="comment-content" data-testid="comment-content-container">
                         <div className="posted-by">
                             <p>Comment by</p>
                             <a href={`https://www.reddit.com/user/${comment.data.author}`} target="_blank"  rel="noopener noreferrer">{comment.data.author}</a>
