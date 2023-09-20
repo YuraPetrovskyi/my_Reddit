@@ -133,13 +133,33 @@ describe('Should display Posts component', () => {
         });
     });
 
-    describe('formatTimeAgo', () => {
-
-        it('should return "X seconds ago" for recent time', () => {
-            expect(formatTimeAgo(1695037038)).toBe("22 hours ago");
+    describe('function formatTimeAgo should be work', () => {
+        const timetest = 1695037038;
+        const currentTime = 1695037038; // This is the current time for test
+        it('should return "7 seconds ago" for recent time', () => {
+            let timestamp = currentTime - 7; // The difference is 7 seconds
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 seconds ago");
         });
-
-        // Додаткові тести
+        it('should return "7 minutes ago" for recent time', () => {
+            let timestamp = currentTime - 7 * 60; // The difference is 7 minutes
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 minutes ago");
+        });
+        it('should return "7 hours ago" for recent time', () => {
+            let timestamp = currentTime - 7 * 3600; // The difference is 7 hours
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 hours ago");
+        });
+        it('should return "7 days ago" for recent time', () => {
+            let timestamp = currentTime - 7 * 86400; // The difference is 7 days
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 days ago");
+        });
+        it('should return "X months ago" for recent time', () => {
+            let timestamp = currentTime - 7 * 2592000; // The difference is 7 months
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 months ago");
+        });
+        it('should return "7 years ago" for recent time', () => {
+            let timestamp = currentTime - 7 * 31536000; // The difference is 7 years
+            expect(formatTimeAgo(timestamp, timetest)).toBe("7 years ago");
+        });
     });
 
 });

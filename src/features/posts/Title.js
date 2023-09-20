@@ -11,9 +11,14 @@ export function formatNumber(number) {
     return number.toString();
 }
 
-export function formatTimeAgo(timestamp) {
-    const currentTime = Math.floor(Date.now() / 1000); // поточний час в секундах
-    const timeDifference = currentTime - timestamp; // різниця у секундах
+export function formatTimeAgo(timestamp, timetest) {
+    let currentTime;
+    if (timetest){
+        currentTime = timetest; // for test
+    } else {
+        currentTime = Math.floor(Date.now() / 1000); // current time in seconds
+    }
+    const timeDifference = currentTime - timestamp; // difference in seconds
 
     if (timeDifference < 60) {
         return `${timeDifference} seconds ago`;
@@ -63,4 +68,3 @@ const Title = ({ post }) => {
 };
 
 export default Title;
-
